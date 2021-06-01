@@ -6,6 +6,7 @@ Francis Owen, Matas Motuzas
 * E/R diagram updated med alt.
 * Lavet Mockups ferdigt (Med limiteret gratis version)
 * Installed entityFrameworkCore NuGet packages.
+* Igang med Interface/Repositories. (LogIn)
 
 
 # Mandag 31/05/2021
