@@ -5,6 +5,7 @@ Francis Owen, Matas Motuzas
 * Opret Domain classer.
 * E/R diagram updated med alt.
 * Lavet Mockups ferdigt (Med limiteret gratis version)
+* Installed entityFrameworkCore NuGet packages.
 
 
 # Mandag 31/05/2021
