@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,34 +18,64 @@ namespace TecH3Projekt.API.Repositories
         }
 
 
+        //GETALL
+        public async Task<List<LogIn>> GetAll()
+        {
+            return await _context.LogIn
+                .Where(a => a.DeletedAt == null)
+                .Include(a => a.User)
+                .ToListAsync();
+        }
 
+        //GETBYID
+        public async Task<LogIn> GetById(int id)
+        {
+            return await _context.LogIn
+                .Where(a => a.DeletedAt == null)
+                .Include(a => a.User)
+                .FirstOrDefaultAsync(a => a.Id == id);
+        }
 
+        //CREATE
         public async Task<LogIn> Create(LogIn logIn)
         {
-            LogIn.CreatedAt = DateTime.Now;
+            logIn.CreatedAt = DateTime.Now;
             _context.LogIn.Add(logIn);
             await _context.SaveChangesAsync();
             return logIn;
         }
 
-        public Task<LogIn> Delete(int id)
+        //UPDATE
+        public async Task<LogIn> Update(int id, LogIn logIn)
         {
-            throw new NotImplementedException();
+            var editLogIn = await _context.LogIn.FirstOrDefaultAsync(a => a.Id == id);
+            if (editLogIn != null)
+            {
+                // tilføj rettelses tiden til elementet, så vi kan tracke seneste ændring
+
+                editLogIn.UpdatedAt = DateTime.Now;
+                editLogIn.Email = logIn.Email;
+                editLogIn.Password = logIn.Password;
+                editLogIn.IsAdmin = logIn.IsAdmin;
+
+
+                _context.LogIn.Update(editLogIn);
+                await _context.SaveChangesAsync();
+            }
+            return editLogIn;
         }
 
-        public Task<List<LogIn>> GetAll()
+        //DELETE
+        public async Task<LogIn> Delete(int id)
         {
-            throw new NotImplementedException();
+            var logIn = await _context.LogIn.FirstOrDefaultAsync(a => a.Id == id);
+            if (logIn != null)
+            {
+                logIn.DeletedAt = DateTime.Now;
+                await _context.SaveChangesAsync();
+            }
+            return logIn;
         }
 
-        public Task<LogIn> GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<LogIn> Update(int id, LogIn logIn)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
