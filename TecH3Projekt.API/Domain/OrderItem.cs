@@ -8,6 +8,9 @@ namespace TecH3Projekt.API.Domain
 {
     public class OrderItem : BaseModel
     {
+        [ForeignKey("Product.Id")]
+        public int ProductId { get; set; }
+
         [ForeignKey("Order.Id")]
         public int OrderId { get; set; }
 

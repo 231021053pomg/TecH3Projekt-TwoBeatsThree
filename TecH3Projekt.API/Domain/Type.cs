@@ -9,6 +9,6 @@ namespace TecH3Projekt.API.Domain
     public class Type : BaseModel
     {
        [Required]
-        public string Name { get; set; }
+        public string TypeName { get; set; }
     }
 }
