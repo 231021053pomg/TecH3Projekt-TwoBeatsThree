@@ -2,7 +2,8 @@
 Francis Owen, Matas Motuzas
 
 # Tirsdag 01/06/2021
-*
+* Opret Domain classer.
+* E/R diagram updated med alt.
 
 
 # Mandag 31/05/2021
