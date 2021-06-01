@@ -11,11 +11,20 @@ namespace TecH3Projekt.API.Repositories
     {
         private readonly TecH3ProjectDbContext _context;
 
-
-
-        public Task<LogIn> Create(LogIn logIn)
+        public LogInRepository(TecH3ProjectDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+
+
+
+
+        public async Task<LogIn> Create(LogIn logIn)
+        {
+            LogIn.CreatedAt = DateTime.Now;
+            _context.LogIn.Add(logIn);
+            await _context.SaveChangesAsync();
+            return logIn;
         }
 
         public Task<LogIn> Delete(int id)
