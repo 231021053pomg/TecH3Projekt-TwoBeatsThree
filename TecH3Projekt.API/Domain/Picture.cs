@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace TecH3Projekt.API.Domain
 {
-    public class Picture
+    public class Picture : BaseModel
     {
-        public string src { get; set; }
+        public string Src { get; set; }
 
         [ForeignKey("Product.Id")]
         public int ProductId { get; set; }

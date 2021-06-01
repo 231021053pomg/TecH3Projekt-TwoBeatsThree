@@ -10,7 +10,8 @@ namespace TecH3Projekt.API.Domain
     {
         [ForeignKey("LogIn.Id")]
         public int LogInId { get; set; }
+        public DateTime DateMade { get; set; }//Confirm???
 
-        public bool Status { get; set; }
+        public bool Status { get; set; }//EXTRA
     }
 }

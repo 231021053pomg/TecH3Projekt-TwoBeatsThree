@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TecH3Projekt.API.Domain
 {
-    public class Product_Property
+    public class Product_Property : BaseModel
     {
         [ForeignKey("Product.Id")]
         public int ProductId { get; set; }

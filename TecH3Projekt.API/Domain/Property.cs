@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace TecH3Projekt.API.Domain
 {
-    public class Property
+    public class Property : BaseModel
     {
-        public string Name { get; set; }
+        public string PropertyName { get; set; }
     }
 }
