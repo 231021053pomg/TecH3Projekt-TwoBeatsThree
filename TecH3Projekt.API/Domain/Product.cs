@@ -7,5 +7,6 @@ namespace TecH3Projekt.API.Domain
 {
     public class Product
     {
+
     }
 }
