@@ -14,6 +14,8 @@ namespace TecH3Projekt.API.Database
 
 
         public DbSet<LogIn> LogIn { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Product> Product { get; set; }
 
     }
 }
