@@ -1,10 +1,14 @@
 # TecH3Projekt-TwoBeatsThree
 Francis Owen, Matas Motuzas
 
+# Fredag 04/06/2021
+* 
+
 
 # Torsdag 03/06/2021
 * Repository Tests: LogInRepositoryTests is Done
 * Some Repositories have been modified or added ekstra code
+* Oprettet databasen som virker
 * 
 
 
