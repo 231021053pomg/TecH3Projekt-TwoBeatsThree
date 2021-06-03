@@ -2,7 +2,13 @@
 Francis Owen, Matas Motuzas
 
 # Onsdag 02/06/2021
-* test
+* trouble shot LogInRepository
+* Igang med Repositories.
+* Set AddDbContext with connection string (ProjectConnection) in startup.
+* Set ProjectConnection ConnectionString in appsettings.Devlopment.json.
+* Should be ready for DBMigration once all Repos are complete. (DBMigration done from PMConsole:add-migration MNAME.)
+Remember to change all  datetime2 to datetime. Then update-database to create database.
+
 
 
 # Tirsdag 01/06/2021
