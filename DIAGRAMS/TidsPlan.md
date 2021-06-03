@@ -74,6 +74,6 @@ Property
 Type
 User
 
-Misc.
+Misc:
 DB Migration, og Database opsættning.
-Angular Client
+Angular Client:
