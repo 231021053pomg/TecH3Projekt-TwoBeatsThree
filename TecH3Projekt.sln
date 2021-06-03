@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TecH3Projekt.API", "TecH3Projekt.API\TecH3Projekt.API.csproj", "{082D7415-D89B-4FBF-89C5-091EF9DE9AA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecH3Projekt.Tests", "TecH3Projekt.Tests\TecH3Projekt.Tests.csproj", "{65482A1A-EA21-411E-8A4B-C0EBB21A5B62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TecH3Projekt.Tests", "TecH3Projekt.Tests\TecH3Projekt.Tests.csproj", "{65482A1A-EA21-411E-8A4B-C0EBB21A5B62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
