@@ -7,14 +7,14 @@
 
 03/06/2021
 
-Blev Færdig med i de første 2 dage (dvs. 31/05 og 01/06) af projektet:
+* Blev Færdig med i de første 2 dage (dvs. 31/05 og 01/06) af projektet:
 Models
 E/R Diagram
 Mockups
 LogIn Repository/Interface
 Database/TecH3ProjectDbContext
 
-Repositories og Interfaces for:
+* Repositories og Interfaces for:
 Order
 OrderItem
 Picture
@@ -24,7 +24,7 @@ Property
 Type
 User
 
-Tests for Repositories:
+* Tests for Repositories:
 Order
 OrderItem
 Picture
@@ -34,7 +34,7 @@ Property
 Type
 User
 
-Services og interfaces for:
+* Services og interfaces for:
 Order
 OrderItem
 Picture
@@ -44,7 +44,7 @@ Property
 Type
 User
 
-Tests for Services:
+* Tests for Services:
 Order
 OrderItem
 Picture
@@ -54,7 +54,7 @@ Property
 Type
 User
 
-Controllers for:
+* Controllers for:
 Order
 OrderItem
 Picture
@@ -64,7 +64,7 @@ Property
 Type
 User
 
-Controllers Tests for:
+* Controllers Tests for:
 Order
 OrderItem
 Picture
@@ -74,6 +74,7 @@ Property
 Type
 User
 
-Misc:
+* Misc:
 DB Migration, og Database opsættning.
-Angular Client:
+
+* Angular Client:
