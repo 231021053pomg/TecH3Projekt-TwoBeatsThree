@@ -12,8 +12,8 @@ Francis Owen, Matas Motuzas
 * Set ProjectConnection ConnectionString in appsettings.Devlopment.json.
 * Should be ready for DBMigration once all Repos are complete. (DBMigration done from PMConsole:add-migration MNAME.)
 Remember to change all  datetime2 to datetime. Then update-database to create database.
-*80% af tidsplanen for API
-*Repositories og interfaces for User, Order, OrderItem, Property, ProductProperty are done
+* 80% af tidsplanen for API
+* Repositories og interfaces for User, Order, OrderItem, Property, ProductProperty are done
 
 
 # Tirsdag 01/06/2021
