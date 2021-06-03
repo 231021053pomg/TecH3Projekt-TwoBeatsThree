@@ -14,6 +14,18 @@
 * LogIn Repository/Interface
 * Database/TecH3ProjectDbContext
 
+# Domains/Models
+* BaseModel /*Complete
+* Login /
+* Order
+* OrderItem
+* Picture
+* Product
+* Product_Property
+* Property
+* Type
+* User
+
 # Repositories og Interfaces for:
 * Order
 * OrderItem
