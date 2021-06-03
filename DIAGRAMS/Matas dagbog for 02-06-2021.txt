@@ -1,0 +1,3 @@
+Jeg har lave:
+ca. 80% tidsplanen for API
+Repositories og interfaces for User, Order, OrderItem, Property, ProductProperty

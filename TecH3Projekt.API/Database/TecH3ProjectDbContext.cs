@@ -16,7 +16,17 @@ namespace TecH3Projekt.API.Database
         public DbSet<LogIn> LogIn { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Product> Product { get; set; }
+
+        public DbSet<Order> Order { get; set; }
+
+        public DbSet<OrderItem> OrderItem { get; set; }
         public DbSet<Picture> Picture { get; set; }
+        public DbSet<Product_Property> Product_Property { get; set; }
+        public DbSet<Property> Property { get; set; }
         public DbSet<Domain.Type> Type { get; set; }
+
+
+       
+
     }
 }
