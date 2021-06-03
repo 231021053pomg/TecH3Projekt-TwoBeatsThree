@@ -19,7 +19,7 @@ namespace TecH3Projekt.API.Domain
         public double Price { get; set; }
 
         public string Description { get; set; }
-        //List creation for each 1-to-M relation?
+        //List creation for each 1-to-M relation.
         //Picture
         public Product()//ctor needed for get of list.
         {
