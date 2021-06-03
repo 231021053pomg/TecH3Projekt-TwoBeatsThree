@@ -15,16 +15,16 @@
 * Database/TecH3ProjectDbContext
 
 # Domains/Models
-* BaseModel /*Complete
-* Login /
-* Order
-* OrderItem
-* Picture
-* Product
-* Product_Property
-* Property
-* Type
-* User
+* BaseModel /Complete
+* Login /Complete
+* Order /Complete
+* OrderItem /Complete
+* Picture /Complete
+* Product /Complete
+* Product_Property /Complete
+* Property /Complete
+* Type /Complete
+* User /Complete
 
 # Repositories og Interfaces for:
 * Order
@@ -36,7 +36,8 @@
 * Type
 * User
 
-# Tests for Repositories:
+# Tests for Repositories: 45 min average.
+* LogIn / 10:20 - 10:35
 * Order
 * OrderItem
 * Picture
@@ -87,7 +88,7 @@
 * User
 
 # Misc:
-* DB Migration, og Database opsættning.
+* DB Migration, og Database opsættning. Time:20 min /10:36 - 10:42 /  
 
 # Angular Client:
 * 
