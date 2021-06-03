@@ -32,6 +32,7 @@ namespace TecH3Projekt.API.Repositories
         {
             return await _context.Product
                .Where(a => a.DeletedAt == null)
+               .Include(a => a.Pictures)
                .FirstOrDefaultAsync(a => a.Id == id);
         }
 

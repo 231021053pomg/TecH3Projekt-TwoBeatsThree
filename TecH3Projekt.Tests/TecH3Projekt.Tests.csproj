@@ -27,4 +27,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TecH3Projekt.API\TecH3Projekt.API.csproj" />
+  </ItemGroup>
+
 </Project>
