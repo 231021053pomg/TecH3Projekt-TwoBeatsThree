@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;//
+using System.ComponentModel.DataAnnotations.Schema;//
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,7 +11,9 @@ namespace TecH3Projekt.API.Domain
     {
         [ForeignKey("LogIn.Id")]
         public int LogInId { get; set; }
-        public DateTime DateMade { get; set; }//Confirm???
+
+        [Required]
+        public DateTime OrderMade { get; set; }
 
         public bool Status { get; set; }//EXTRA
     }
