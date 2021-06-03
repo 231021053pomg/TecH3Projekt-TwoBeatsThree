@@ -39,14 +39,32 @@ namespace TecH3Projekt.API.Repositories
             return type;
         }
 
-        public Task<Domain.Type> Update(int id, Domain.Type type)
+        public async Task<Domain.Type> Update(int id, Domain.Type type)
         {
-            throw new NotImplementedException();
+            var editType = await _context.Type.FirstOrDefaultAsync(a => a.Id == id);
+            if (editType != null)
+            {
+                // tilføj rettelses tiden til elementet, så vi kan tracke seneste ændring
+
+                editType.UpdatedAt = DateTime.Now;
+                editType.TypeName = type.TypeName;
+
+
+                _context.Type.Update(editType);
+                await _context.SaveChangesAsync();
+            }
+            return editType;
         }
 
-        public Task<Domain.Type> Delete(int id)
+        public async Task<Domain.Type> Delete(int id)
         {
-            throw new NotImplementedException();
+            var type = await _context.Type.FirstOrDefaultAsync(a => a.Id == id);
+            if (type != null)
+            {
+                type.DeletedAt = DateTime.Now;
+                await _context.SaveChangesAsync();
+            }
+            return type;
         }
     }
 }
