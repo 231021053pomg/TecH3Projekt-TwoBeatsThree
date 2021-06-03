@@ -32,7 +32,7 @@ namespace TecH3Projekt.API.Repositories
         {
             return await _context.LogIn
                 .Where(a => a.DeletedAt == null)
-                .Include(a => a.UserId)
+                .Include(a => a.UserProfile)
                 .FirstOrDefaultAsync(a => a.Id == id);
         }
 
