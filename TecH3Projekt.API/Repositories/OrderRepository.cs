@@ -23,7 +23,7 @@ namespace TecH3Projekt.API.Repositories
         {
             return await _context.Order
                 .Where(a => a.DeletedAt == null)
-                .Include(a => a.LogInId)
+                //.Include(a => a.LogInId)
                 .ToListAsync();
         }
 

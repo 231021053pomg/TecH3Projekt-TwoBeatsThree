@@ -32,7 +32,9 @@ namespace TecH3Projekt.API
             services.AddDbContext<TecH3ProjectDbContext>(//
                 options => options.UseSqlServer(Configuration.GetConnectionString("ProjectConnection"))
                 );
-
+            //Scopes for Repos NEEDED for implemintation. 
+            services.AddScoped<ILogInRepository, LogInRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();//
 
             services.AddControllers();
