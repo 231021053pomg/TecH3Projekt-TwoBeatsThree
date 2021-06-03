@@ -3,6 +3,8 @@ Francis Owen, Matas Motuzas
 
 
 # Torsdag 03/06/2021
+* Repository Tests: LogInRepositoryTests is Done
+* Some Repositories have been modified or added ekstra code
 * 
 
 
@@ -14,8 +16,6 @@ Francis Owen, Matas Motuzas
  Then update-database to create database.
 * 80% af tidsplanen for API
 * Repositories og interfaces: User, Order, OrderItem, Property, ProductProperty are done
-* Repository Tests: LogInRepositoryTests is Done
-* 
 
 
 # Tirsdag 01/06/2021
