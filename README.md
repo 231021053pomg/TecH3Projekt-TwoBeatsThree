@@ -11,7 +11,7 @@ Francis Owen, Matas Motuzas
 * Set AddDbContext with connection string (ProjectConnection) in startup.
 * Set ProjectConnection ConnectionString in appsettings.Devlopment.json.
 * Should be ready for DBMigration once all Repos are complete. (DBMigration done from PMConsole:add-migration MNAME.)
-Remember to change all  datetime2 to datetime. Then update-database to create database.
+ Then update-database to create database.
 * 80% af tidsplanen for API
 * Repositories og interfaces for User, Order, OrderItem, Property, ProductProperty are done
 
