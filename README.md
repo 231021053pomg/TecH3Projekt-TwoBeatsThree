@@ -9,6 +9,7 @@ Francis Owen, Matas Motuzas
 * Repository Tests: LogInRepositoryTests is Done
 * Some Repositories have been modified or added ekstra code
 * Oprettet databasen som virker
+* Gjordt tidsplanen til excel ark med forvented tider for forskelige opgaver
 * 
 
 
