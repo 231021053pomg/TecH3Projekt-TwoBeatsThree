@@ -12,11 +12,11 @@ namespace TecH3Projekt.API.Domain
         [Key]
         public int Id { get; set; }
 
-        [JsonIgnore]
+        [JsonIgnore]//can't be sent to client.
         public DateTime CreatedAt { get; set; }
 
         [JsonIgnore]
-        public DateTime? UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }//? means can be null.
 
         [JsonIgnore]
         public DateTime? DeletedAt { get; set; }
