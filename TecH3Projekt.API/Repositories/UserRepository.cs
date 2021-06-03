@@ -20,7 +20,7 @@ namespace TecH3Projekt.API.Repositories
 
 
 
-
+        //GETALL
         public async Task<List<User>> GetAll()
         {
             return await _context.User
@@ -29,27 +29,56 @@ namespace TecH3Projekt.API.Repositories
                 .ToListAsync();
         }
 
-
+        //GETBYID
         public async Task<User> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.User
+                .Where(a => a.DeletedAt == null)
+                .Include(a => a.LogInId)
+                .FirstOrDefaultAsync(a => a.Id == id);
         }
 
-
+        //CREATE
         public async Task<User> Create(User user)
         {
-            throw new NotImplementedException();
+            user.CreatedAt = DateTime.Now;
+            _context.User.Add(user);
+            await _context.SaveChangesAsync();
+            return user;
         }
 
-
+        //UPDATE
         public async Task<User> Update(int id, User user)
         {
-            throw new NotImplementedException();
+            var editUser = await _context.User.FirstOrDefaultAsync(a => a.Id == id);
+            if (editUser != null)
+            {
+                // tilføj rettelses tiden til elementet, så vi kan tracke seneste ændring
+
+                editUser.UpdatedAt = DateTime.Now;
+                editUser.FirstName = user.FirstName;
+                editUser.LastName = user.LastName;
+                editUser.Address = user.Address;
+                editUser.PostNr = user.PostNr;
+                editUser.City = user.City;
+
+
+                _context.User.Update(editUser);
+                await _context.SaveChangesAsync();
+            }
+            return editUser;
         }
 
+        //DELETE
         public async Task<User> Delete(int id)
         {
-            throw new NotImplementedException();
+            var user = await _context.User.FirstOrDefaultAsync(a => a.Id == id);
+            if (user != null)
+            {
+                user.DeletedAt = DateTime.Now;
+                await _context.SaveChangesAsync();
+            }
+            return user;
         }
 
     }
