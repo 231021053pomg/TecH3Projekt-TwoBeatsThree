@@ -7,13 +7,15 @@ Francis Owen, Matas Motuzas
 
 
 # Onsdag 02/06/2021
-* trouble shot LogInRepository
+* Trouble shot LogInRepository
 * Set AddDbContext with connection string (ProjectConnection) in startup.
 * Set ProjectConnection ConnectionString in appsettings.Devlopment.json.
 * Should be ready for DBMigration once all Repos are complete. (DBMigration done from PMConsole:add-migration MNAME.)
  Then update-database to create database.
 * 80% af tidsplanen for API
-* Repositories og interfaces for User, Order, OrderItem, Property, ProductProperty are done
+* Repositories og interfaces: User, Order, OrderItem, Property, ProductProperty are done
+* Repository Tests: LogInRepositoryTests is Done
+* 
 
 
 # Tirsdag 01/06/2021
