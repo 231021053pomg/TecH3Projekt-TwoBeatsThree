@@ -23,7 +23,7 @@ namespace TecH3Projekt.API.Repositories
         {
             return await _context.Product_Property
                 .Where(a => a.DeletedAt == null)
-                .Include(a => a.) //??
+
                 .ToListAsync();
         }
 
@@ -32,7 +32,7 @@ namespace TecH3Projekt.API.Repositories
         {
             return await _context.Product_Property
                 .Where(a => a.DeletedAt == null)
-                .Include(a => a.LogInId)
+
                 .FirstOrDefaultAsync(a => a.Id == id);
         }
 
@@ -54,7 +54,7 @@ namespace TecH3Projekt.API.Repositories
                 // tilføj rettelses tiden til elementet, så vi kan tracke seneste ændring
 
                 editProduct_Property.UpdatedAt = DateTime.Now;
-                editProduct_Property.LogInId = product_Property.LogInId; //??
+
 
 
                 _context.Product_Property.Update(editProduct_Property);
