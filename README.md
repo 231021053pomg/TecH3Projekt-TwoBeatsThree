@@ -8,9 +8,9 @@ Francis Owen, Matas Motuzas
 # Torsdag 03/06/2021
 * Repository Tests: LogInRepositoryTests is Done
 * Some Repositories have been modified or added ekstra code
-* Oprettet databasen som virker
-* Gjordt tidsplanen til excel ark med forvented tider for forskelige opgaver
-* 
+* Oprettet databasen som virker. Bygget Database med Initial Migration.
+* Gjordt tidsplanen til excel ark med forvented tider for forskelige opgaver.
+* opsamling af uarbejded Domains, Repos og Interfaces.
 
 
 # Onsdag 02/06/2021
