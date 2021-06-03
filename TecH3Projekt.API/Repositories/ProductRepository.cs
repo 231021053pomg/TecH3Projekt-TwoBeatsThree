@@ -17,7 +17,7 @@ namespace TecH3Projekt.API.Repositories
             _context = context;//connect readonly and instance context.
         }
 
-        
+        //GETALL
         public async Task<List<Product>> GetAll()//async tasks don't stop other tasks from running.
         {
             //await will return data when completed.
@@ -27,23 +27,50 @@ namespace TecH3Projekt.API.Repositories
                .ToListAsync();
         }
 
-        public Task<Product> GetById(int id)
+        //GETBYID
+        public async Task<Product> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Product
+               .Where(a => a.DeletedAt == null)
+               .FirstOrDefaultAsync(a => a.Id == id);
         }
 
-        public Task<Product> Create(Product product)
+        //CREATE
+        public async Task<Product> Create(Product product)
         {
-            throw new NotImplementedException();
-        }
-        public Task<Product> Update(int id, Product product)
-        {
-            throw new NotImplementedException();
+            product.CreatedAt = DateTime.Now;
+            _context.Product.Add(product);
+            await _context.SaveChangesAsync();
+            return product;
         }
 
-        public Task<Product> Delete(int id)
+        //UPDATE
+        public async Task<Product> Update(int id, Product product)
         {
-            throw new NotImplementedException();
+            var editProduct = await _context.Product.FirstOrDefaultAsync(a => a.Id == id);
+            if (editProduct != null)
+            {
+                // tilføj rettelses tiden til elementet, så vi kan tracke seneste ændring
+
+                editProduct.UpdatedAt = DateTime.Now;
+
+
+                _context.Product.Update(editProduct);
+                await _context.SaveChangesAsync();
+            }
+            return editProduct;
+        }
+
+        //DELETE
+        public async Task<Product> Delete(int id)
+        {
+            var product = await _context.Product.FirstOrDefaultAsync(a => a.Id == id);
+            if (product != null)
+            {
+                product.DeletedAt = DateTime.Now;
+                await _context.SaveChangesAsync();
+            }
+            return product;
         }
 
     }

@@ -23,18 +23,18 @@ namespace TecH3Projekt.API.Repositories
         {
             return await _context.Product_Property
                 .Where(a => a.DeletedAt == null)
-
                 .ToListAsync();
         }
+        
 
         //GETBYID
         public async Task<Product_Property> GetById(int id)
         {
             return await _context.Product_Property
                 .Where(a => a.DeletedAt == null)
-
                 .FirstOrDefaultAsync(a => a.Id == id);
         }
+
 
         //CREATE
         public async  Task<Product_Property> Create(Product_Property product_Property)
@@ -44,6 +44,7 @@ namespace TecH3Projekt.API.Repositories
             await _context.SaveChangesAsync();
             return product_Property;
         }
+        
 
         //UPDATE
         public async Task<Product_Property> Update(int id, Product_Property product_Property)
@@ -54,14 +55,12 @@ namespace TecH3Projekt.API.Repositories
                 // tilføj rettelses tiden til elementet, så vi kan tracke seneste ændring
 
                 editProduct_Property.UpdatedAt = DateTime.Now;
-
-
-
                 _context.Product_Property.Update(editProduct_Property);
                 await _context.SaveChangesAsync();
             }
             return editProduct_Property;
         }
+
 
         //DELETE
         public async Task<Product_Property> Delete(int id)
