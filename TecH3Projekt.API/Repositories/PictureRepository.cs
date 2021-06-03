@@ -17,6 +17,7 @@ namespace TecH3Projekt.API.Repositories
             _context = context;
         }
 
+        //GETALL
         public async Task<List<Picture>> GetAll()
         {
             return await _context.Picture
@@ -24,6 +25,7 @@ namespace TecH3Projekt.API.Repositories
                 .ToListAsync();
         }
 
+        //GETBYID
         public async Task<Picture> GetById(int id)
         {
             return await _context.Picture
@@ -31,6 +33,7 @@ namespace TecH3Projekt.API.Repositories
                .FirstOrDefaultAsync(a => a.Id == id);
         }
 
+        //CREATE
         public async Task<Picture> Create(Picture picture)
         {
             picture.CreatedAt = DateTime.Now;
@@ -39,6 +42,7 @@ namespace TecH3Projekt.API.Repositories
             return picture;
         }
 
+        //UPDATE
         public async Task<Picture> Update(int id, Picture picture)
         {
             var editPicture = await _context.Picture.FirstOrDefaultAsync(a => a.Id == id);
@@ -57,6 +61,7 @@ namespace TecH3Projekt.API.Repositories
             return editPicture;
         }
 
+        //DELETE
         public async Task<Picture> Delete(int id)
         {
             var picture = await _context.Picture.FirstOrDefaultAsync(a => a.Id == id);
