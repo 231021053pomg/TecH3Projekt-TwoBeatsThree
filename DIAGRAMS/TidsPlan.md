@@ -26,7 +26,8 @@
 * Type /Complete
 * User /Complete
 
-# Repositories og Interfaces for:
+# Repositories og Interfaces for: Repo 10 min average. Interface 2 min average.
+* LogIn: Interface basic complete. Repo
 * Order
 * OrderItem
 * Picture
