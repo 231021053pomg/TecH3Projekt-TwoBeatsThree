@@ -31,6 +31,11 @@ namespace TecH3Projekt.Tests
 
             _context.Database.EnsureDeleted();
 
+
+            _context.User.Add(new User
+            {
+                LogInId = 1,
+
             //LOG INS
             _context.LogIn.Add(new API.Domain.LogIn
             {
@@ -63,6 +68,7 @@ namespace TecH3Projekt.Tests
             {
                 LogInId = 1,
                 Id = 1,
+
                 FirstName = "Matas",
                 LastName = "Motuzas",
                 Address = "Rubinvej 39",
@@ -73,7 +79,10 @@ namespace TecH3Projekt.Tests
             _context.User.Add(new User
             {
                 LogInId = 2,
+
+
                 Id = 2,
+
                 FirstName = "Tomas",
                 LastName = "Brunosis",
                 Address = "Liepai 80",
@@ -84,7 +93,9 @@ namespace TecH3Projekt.Tests
             _context.User.Add(new User
             {
                 LogInId = 3,
+
                 Id = 3,
+
                 FirstName = "Skaidra",
                 LastName = "Linkoniene",
                 Address = "Geroviu 80",
@@ -127,12 +138,17 @@ namespace TecH3Projekt.Tests
 
             // Assert
             Assert.Equal(1, user.Id);
+
+            Assert.Equal("Matas", user.FirstName);
+            Assert.Equal("Motuzas", user.LastName);
+
             Assert.Equal(1, user.LogInId);
             Assert.Equal("Matas", user.FirstName);
             Assert.Equal("Motuzas", user.LastName);
             Assert.Equal("Rubinvej 39", user.Address);
             Assert.Equal(3650, user.PostNr);
             Assert.Equal("Ølstykke", user.City);
+
         }
 
 
@@ -146,8 +162,10 @@ namespace TecH3Projekt.Tests
 
             User newUser = new User
             {
+
                 LogInId = 4,
                 Id = 4,
+
                 FirstName = "John",
                 LastName = "Johnson",
                 Address = "Thestreet 123B",
@@ -180,8 +198,10 @@ namespace TecH3Projekt.Tests
 
             User updateUser = new User
             {
+
                 Id = 1,
                 LogInId = 1,
+
                 FirstName = "Michael",
                 LastName = "Jackson",
                 Address = "Martin Street 12",

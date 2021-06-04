@@ -92,6 +92,7 @@ namespace TecH3Projekt.Tests
             Assert.Equal(1, logIn.Id);
             Assert.Equal("Albert@gmail.com", logIn.Email);
             Assert.Equal("Andersen", logIn.Password);
+
             Assert.False(logIn.IsAdmin);
         }
 
@@ -148,6 +149,9 @@ namespace TecH3Projekt.Tests
 
 
             //Assert
+
+            Assert.NotNull(logIns);
+
             //Assert.NotNull(logIns);
             Assert.Equal(logInId, logIns.Id);
             Assert.Equal(updateLogIn.Email, logIns.Email);

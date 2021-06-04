@@ -23,7 +23,7 @@ namespace TecH3Projekt.API.Repositories
         {
             return await _context.Order
                 .Where(a => a.DeletedAt == null)
-                //.Include(a => a.LogInId)
+                .Include(a => a.OrderItems)
                 .ToListAsync();
         }
 
@@ -32,7 +32,7 @@ namespace TecH3Projekt.API.Repositories
         {
             return await _context.Order
                 .Where(a => a.DeletedAt == null)
-                .Include(a => a.LogInId)
+                .Include(a => a.OrderItems)
                 .FirstOrDefaultAsync(a => a.Id == id);
         }
 
