@@ -15,6 +15,16 @@ namespace TecH3Projekt.API.Domain
         [Required]
         public DateTime OrderMade { get; set; }
 
-        public bool Status { get; set; }//EXTRA
+        //public bool Status { get; set; }//EXTRA
+
+        //List creation for each 1-to-M relation.
+        //OrderItem
+        public Order()
+        {
+            OrderItems = new List<OrderItem>();
+        }
+        public List<OrderItem> OrderItems { get; set; }
+
+        public LogIn LogIn { get; set; }
     }
 }

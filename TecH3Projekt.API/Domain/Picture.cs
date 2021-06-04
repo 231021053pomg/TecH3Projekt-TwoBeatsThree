@@ -16,5 +16,6 @@ namespace TecH3Projekt.API.Domain
 
         [ForeignKey("Product.Id")]
         public int ProductId { get; set; }
+        //public Product Product { get; set; }
     }
 }

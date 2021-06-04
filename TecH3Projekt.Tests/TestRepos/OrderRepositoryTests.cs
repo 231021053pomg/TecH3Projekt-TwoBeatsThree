@@ -26,12 +26,45 @@ namespace TecH3Projekt.Tests.TestRepos
             _context = new TecH3ProjectDbContext(_options);
             _context.Database.EnsureDeleted();//delete any former database contexts, ensure a clean slate.
 
-            _context.Order.Add(new Order { 
+            //LogIn examples.
+            _context.LogIn.Add(new API.Domain.LogIn
+            {
+                Id = 1,
+                Email = "Albert@gmail.com",
+                Password = "Andersen",
+                IsAdmin = false
+            });
+
+            _context.LogIn.Add(new API.Domain.LogIn
+            {
+                Id = 2,
+                Email = "Anderson@gmail.com",
+                Password = "Andersen123",
+                IsAdmin = false
+            });
+
+            _context.LogIn.Add(new API.Domain.LogIn
+            {
+                Id = 3,
+                Email = "Morten@gmail.com",
+                Password = "Mortensen123",
+                IsAdmin = false
+            });
+
+            _context.SaveChanges();//Save LogIn examples
+
+            //Order examples
+            _context.Order.Add(new Order {
                 //Add examples to database.
-                //FK LogInID = int,
-                //DateMade datetime.
+                //Id is not mandatory.
+                Id = 1,
+                //OrderMade = ,
+                //OrderItems = ,//HOW to call List of Products??
+                LogInId = 1
+
 
             });
+
             _context.SaveChanges();//Save examples (if any)
         }
 
@@ -64,5 +97,23 @@ namespace TecH3Projekt.Tests.TestRepos
             //Assert.Null(order);
         }
 
+        [Fact]
+        public async Task Create_ReturnOrderWithNewDateTime_WhenCreated()
+        {
+            //Arrange
+            OrderRepository orderRepository = new OrderRepository(_context);
+            Order NewOrder = new Order
+            {
+                //Add examples to database.
+                //Id is not mandatory.
+                
+            };
+
+            //Act
+            var order = await orderRepository.GetAll();
+
+            //Assert
+            Assert.NotNull(order);
+        }
     }
 }
