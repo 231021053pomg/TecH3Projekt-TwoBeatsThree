@@ -25,7 +25,7 @@ namespace TecH3Projekt.API.Repositories
         {
             return await _context.User
                 .Where(a => a.DeletedAt == null)
-                .Include(a => a.LogInId)
+                .Include(a => a.LogIn)
                 .ToListAsync();
         }
 
@@ -34,7 +34,7 @@ namespace TecH3Projekt.API.Repositories
         {
             return await _context.User
                 .Where(a => a.DeletedAt == null)
-                .Include(a => a.LogInId)
+                .Include(a => a.LogIn)
                 .FirstOrDefaultAsync(a => a.Id == id);
         }
 

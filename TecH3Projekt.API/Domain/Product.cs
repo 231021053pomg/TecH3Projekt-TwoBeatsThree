@@ -26,5 +26,6 @@ namespace TecH3Projekt.API.Domain
             Pictures = new List<Picture>();
         }
         public List<Picture> Pictures { get; set; }//List is used for 1-to-M relation.
+        public Type Type { get; set; }
     }
 }
