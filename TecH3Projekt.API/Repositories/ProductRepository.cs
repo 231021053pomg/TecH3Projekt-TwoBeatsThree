@@ -24,6 +24,7 @@ namespace TecH3Projekt.API.Repositories
             return await _context.Product
                .Where(a => a.DeletedAt == null)//Sort out Deleted Products.
                .Include(a => a.Pictures)//1-to-M relations? what about 1-to-1 like type?
+               .Include(a => a.Type)
                .ToListAsync();
         }
 
