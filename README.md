@@ -1,8 +1,18 @@
 # TecH3Projekt-TwoBeatsThree
 Francis Owen, Matas Motuzas
 
+
+
+
+# Tirsdag 08/06/2021
+* PLAN: Order og Picture Repo tests skal laves færdigt og der skal arbejdes på andre repository tests. Der skal måske oprettes controllers også....
+
+
 # Mandag 07/06/2021
-* 
+* Var kun Matas alene hele dagen
+* Alle services og service interfaces blev oprettet og lavet ferdigt
+* Fik lavet lidt i LogInServiceTests, men blev ikke ferdig. (lavet i forhold til exempel)
+* ProductReposiotryTests blev lavet ferdigt
 
 
 # Fredag 04/06/2021
