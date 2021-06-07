@@ -1,8 +1,13 @@
 # TecH3Projekt-TwoBeatsThree
 Francis Owen, Matas Motuzas
 
-# Fredag 04/06/2021
+# Mandag 07/06/2021
 * 
+
+
+# Fredag 04/06/2021
+* 5 repo tests blev lavet dvs for LogIn, Product, User, Order og Picture
+* Andre små endringer
 
 
 # Torsdag 03/06/2021
