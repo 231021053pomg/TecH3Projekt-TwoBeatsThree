@@ -68,6 +68,8 @@ namespace TecH3Projekt.Tests.TestRepos
             _context.SaveChanges();//Save examples (if any)
         }
 
+
+        //<<<<<<<<<<<<<<<<<<<<<<< GET ALL ORDERS
         [Fact]//places in test explorer?
         public async Task GetAllOrders_ReturnAllOrders()
         {
@@ -82,6 +84,8 @@ namespace TecH3Projekt.Tests.TestRepos
             //Assert.Equal(2, orders.Count);
         }
 
+
+        //<<<<<<<<<<<<<<<<<<<<<<< GET ORDER BY ID
         [Fact]
         public async Task GetById_ShouldReturnSingleOrder()
         {
@@ -97,6 +101,8 @@ namespace TecH3Projekt.Tests.TestRepos
             //Assert.Null(order);
         }
 
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //<<<<<<<<<<<<<<<<<<<<<<< CREATE ORDER
         [Fact]
         public async Task Create_ReturnOrderWithNewDateTime_WhenCreated()
         {
@@ -115,5 +121,38 @@ namespace TecH3Projekt.Tests.TestRepos
             //Assert
             Assert.NotNull(order);
         }
+
+
+        //<<<<<<<<<<<<<<<<<<<<<<< UPDATE ORDER
+        [Fact]
+        public async Task UpdateOrder_ShouldReturnOrderWithUpdatedDateTime_WhenUpdated()
+        {
+            //Arrange
+            OrderRepository orderRepository = new OrderRepository(_context);
+
+
+            //Act
+            
+
+            //Assert
+            
+        }
+
+
+        //<<<<<<<<<<<<<<<<<<<<<<< DELETE ORDER
+        [Fact]
+        public async Task DeleteOrder_ShouldDeleteAllOrdersWithSameId_WhenOrderExists()
+        {
+            //Arrange
+            OrderRepository orderRepository = new OrderRepository(_context);
+
+
+            //Act
+
+
+            //Assert
+
+        }
+
     }
 }

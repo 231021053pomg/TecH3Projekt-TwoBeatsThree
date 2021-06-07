@@ -142,8 +142,7 @@ namespace TecH3Projekt.Tests.TestRepos
             Assert.Equal(productss.Count + 1, products.Id);
         }
 
-        //NOT FINISHED
-        //-----------------------------------------------------------------------------------------------------------------------------------------------
+
         //<<<<<<<<<<<<<<<<<<<<<<< UPDATE PRODUCT
         [Fact]
         public async Task UpdateProduct_ShouldReturnProductWithUpdatedDateTime_WhenUpdated()
@@ -179,21 +178,21 @@ namespace TecH3Projekt.Tests.TestRepos
 
 
 
-        //<<<<<<<<<<<<<<<<<<<<<<< DELETE LOG IN
+        //<<<<<<<<<<<<<<<<<<<<<<< DELETE PRODUCT
         [Fact]
-        public async Task DeleteLogIn_ShouldDeleteAllLogInsWithSameId_WhenLogInExists()
+        public async Task DeleteProduct_ShouldDeleteAllProductWithSameId_WhenProductExists()
         {
             //Arrange
-            LogInRepository logInRepository = new LogInRepository(_context);
-            int logInId = 1;
+            ProductRepository productRepository = new ProductRepository(_context);
+            int productId = 1;
 
 
             //Act
-            var logIns = await logInRepository.Delete(logInId);
+            var products = await productRepository.Delete(productId);
 
 
             //Assert
-            Assert.NotNull(logIns.DeletedAt);
+            Assert.NotNull(products.DeletedAt);
         }
     }
 }
