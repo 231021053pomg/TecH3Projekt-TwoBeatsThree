@@ -2,11 +2,11 @@
 Francis Owen, Matas Motuzas
 
 # Mandag 07/06/2021
-* 
+* Order repo tests
 
 
 # Fredag 04/06/2021
-* 5 repo tests blev lavet dvs for LogIn, Product, User, Order og Picture
+* 5 repo tests blev lavet dvs for LogIn, Product, User og Picture
 * Andre små endringer
 
 
