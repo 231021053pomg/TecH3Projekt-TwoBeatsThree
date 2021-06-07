@@ -49,6 +49,8 @@ namespace TecH3Projekt.Tests.TestRepos
             _context.SaveChanges();//Save Picture examples
         }
 
+
+        //<<<<<<<<<<<<<<<<<<<<<<< GET ALL PICTURES
         [Fact]
         public async Task GetAllPictures_ReturnAllPictures()
         {
@@ -64,6 +66,8 @@ namespace TecH3Projekt.Tests.TestRepos
             //Assert.Equal(1, pictures.Count);
         }
 
+
+        //<<<<<<<<<<<<<<<<<<<<<<< GET PICTURES BY ID
         [Fact]
         public async Task GetPictureByID_ReturnSinglePicture()
         {
@@ -82,6 +86,8 @@ namespace TecH3Projekt.Tests.TestRepos
             //Assert.Null(pictures);
         }
 
+
+        //<<<<<<<<<<<<<<<<<<<<<<< CREATE PICTURE
         [Fact]
         public async Task CreatePicture_ReturnPictureWithNewDateTime()
         {
@@ -106,10 +112,19 @@ namespace TecH3Projekt.Tests.TestRepos
             //Assert.Null(pictures);
         }
 
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+        //<<<<<<<<<<<<<<<<<<<<<<< UPDATE PICTURE
         [Fact]
         public async Task UpdatePicture_ReturnPictureWithUpdateDateTime()
         {
 
         }
+
+
+        //<<<<<<<<<<<<<<<<<<<<<<< DELETE PICTURE
     }
 }
