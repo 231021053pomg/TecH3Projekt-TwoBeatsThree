@@ -14,6 +14,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using TecH3Projekt.API.Database;//
 using TecH3Projekt.API.Repositories;//
+using TecH3Projekt.API.Services;//
+using Newtonsoft.Json;//
 
 namespace TecH3Projekt.API
 {
@@ -32,12 +34,22 @@ namespace TecH3Projekt.API
             services.AddDbContext<TecH3ProjectDbContext>(//
                 options => options.UseSqlServer(Configuration.GetConnectionString("ProjectConnection"))
                 );
-            //Scopes for Repos NEEDED for implemintation. 
+
+            //Scopes for Repos NEEDED for injection implemintation in services.
             services.AddScoped<ILogInRepository, LogInRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();//
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();//
 
-            services.AddControllers();
+            //Scopes for Services NEEDED for injection implemintation in controllers.
+            services.AddScoped<ILogInService, LogInService>();
+            services.AddScoped<IUserService, UserService>();
+
+            /////////////////
+            services.AddControllers()
+                .AddNewtonsoftJson(options => //Used to handle looping reference issues.
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TecH3Projekt.API", Version = "v1" });
