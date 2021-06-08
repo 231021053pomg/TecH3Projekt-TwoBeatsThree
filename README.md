@@ -9,7 +9,9 @@ Francis Owen, Matas Motuzas
 
 
 # Tirsdag 08/06/2021
-* 
+* Started LogIn and User Controllers. 
+* Ran into trouble with reference loops.
+* Setup NewtonSoft.Json to handle refence loop issue.
 
 
 # Mandag 07/06/2021
