@@ -11,10 +11,10 @@ namespace TecH3Projekt.API.Services
     {
         private readonly IOrderItemRepository _orderItemRepository;
 
-        public OrderItemService(IOrderRepository orderItemRepository)
-        {
-            _orderItemRepository = orderItemRepository; //??
-        }
+        //public OrderItemService(IOrderRepository orderItemRepository)
+        //{
+        //    _orderItemRepository = orderItemRepository; //??
+        //}
 
 
 

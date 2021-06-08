@@ -51,11 +51,11 @@ namespace TecH3Projekt.API.Services
         }
 
 
-        // DELETE PROPERTY
-        public async Task<Property> Delete(int id)
-        {
-            var property = await _propertyRepository.Delete();
-            return property;
-        }
+        //// DELETE PROPERTY
+        //public async Task<Property> Delete(int id)
+        //{
+        //    var property = await _propertyRepository.Delete();
+        //    return property;
+        //}
     }
 }

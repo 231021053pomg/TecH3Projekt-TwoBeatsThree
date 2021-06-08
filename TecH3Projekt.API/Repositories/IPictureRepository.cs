@@ -6,7 +6,7 @@ using TecH3Projekt.API.Domain;//
 
 namespace TecH3Projekt.API.Repositories
 {
-    interface IPictureRepository
+     public interface IPictureRepository
     {
         // Get all Picture objects
         Task<List<Picture>> GetAll();

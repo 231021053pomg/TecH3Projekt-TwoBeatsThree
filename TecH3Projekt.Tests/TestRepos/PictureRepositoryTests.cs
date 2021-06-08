@@ -121,6 +121,14 @@ namespace TecH3Projekt.Tests.TestRepos
         [Fact]
         public async Task UpdatePicture_ReturnPictureWithUpdateDateTime()
         {
+            //Arrange
+            PictureRepository pictureRepository = new PictureRepository(_context);
+            int pictureId = 1;
+
+            Picture updatePicture = new Picture
+            {
+                
+            };
 
         }
 

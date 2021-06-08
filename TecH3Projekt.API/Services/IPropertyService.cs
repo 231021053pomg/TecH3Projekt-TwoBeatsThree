@@ -12,6 +12,6 @@ namespace TecH3Projekt.API.Services
         Task<Property> GetPropertyById(int id);
         Task<Property> Create(Property property);
         Task<Property> Update(int id, Property property);
-        Task<Property> Delete(int id);
+        //Task<Property> Delete(int id);
     }
 }

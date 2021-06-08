@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TecH3Projekt.API.Repositories
 {
-    interface ITypeRepository
+    public interface ITypeRepository
     {
         // Get all Type objects
         Task<List<Domain.Type>> GetAll();

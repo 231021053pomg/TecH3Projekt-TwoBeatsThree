@@ -35,9 +35,10 @@ namespace TecH3Projekt.Tests
             _context.User.Add(new User
             {
                 LogInId = 1,
+            });
 
             //LOG INS
-            _context.LogIn.Add(new API.Domain.LogIn
+            _context.LogIn.Add(new LogIn
             {
                 Id = 1,
                 Email = "Albert@gmail.com",
@@ -45,7 +46,7 @@ namespace TecH3Projekt.Tests
                 IsAdmin = false
             });
 
-            _context.LogIn.Add(new API.Domain.LogIn
+            _context.LogIn.Add(new LogIn
             {
                 Id = 2,
                 Email = "Anderson@gmail.com",
@@ -53,7 +54,7 @@ namespace TecH3Projekt.Tests
                 IsAdmin = false
             });
 
-            _context.LogIn.Add(new API.Domain.LogIn
+            _context.LogIn.Add(new LogIn
             {
                 Id = 3,
                 Email = "Morten@gmail.com",
