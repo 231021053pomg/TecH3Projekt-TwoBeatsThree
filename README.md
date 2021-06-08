@@ -4,9 +4,14 @@ Francis Owen, Matas Motuzas
 
 
 
-# Tirsdag 08/06/2021
-* PLAN: Order og Picture Repo tests skal laves færdigt og der skal arbejdes på andre repository tests. Der skal måske oprettes controllers også....
+# Onsdag 08/06/2021
 * 
+
+
+# Tirsdag 08/06/2021
+* Started LogIn and User Controllers. 
+* Ran into trouble with reference loops.
+* Setup NewtonSoft.Json to handle refence loop issue.
 
 
 # Mandag 07/06/2021
