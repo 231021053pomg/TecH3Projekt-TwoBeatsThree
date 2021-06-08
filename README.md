@@ -4,8 +4,11 @@ Francis Owen, Matas Motuzas
 
 
 
+# Onsdag 08/06/2021
+* 
+
+
 # Tirsdag 08/06/2021
-* PLAN: Order og Picture Repo tests skal laves færdigt og der skal arbejdes på andre repository tests. Der skal måske oprettes controllers også....
 * 
 
 
