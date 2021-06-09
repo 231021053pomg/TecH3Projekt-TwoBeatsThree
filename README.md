@@ -6,7 +6,8 @@ Francis Owen, Matas Motuzas
 
 # Onsdag 08/06/2021
 * Lavet en del af PictureController
-* 
+* Complete controller: User, LogIN.
+* Started Order Controller.
 
 
 # Tirsdag 08/06/2021
