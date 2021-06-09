@@ -5,6 +5,7 @@ Francis Owen, Matas Motuzas
 
 
 # Onsdag 08/06/2021
+* Lavet en del af PictureController
 * 
 
 
