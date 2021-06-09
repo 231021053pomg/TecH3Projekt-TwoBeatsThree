@@ -40,10 +40,13 @@ namespace TecH3Projekt.API
             services.AddScoped<IUserRepository, UserRepository>();//
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();//
+            services.AddScoped<IPictureRepository, PictureRepository>();//
+
 
             //Scopes for Services NEEDED for injection implemintation in controllers.
             services.AddScoped<ILogInService, LogInService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IPictureService, PictureService>();
 
             /////////////////
             services.AddControllers()
