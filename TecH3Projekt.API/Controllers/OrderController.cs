@@ -11,46 +11,45 @@ namespace TecH3Projekt.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LogInController : ControllerBase
+    public class OrderController : ControllerBase
     {
         //inject service into controller.
-        private readonly ILogInService _loginService;
+        private readonly IOrderService _orderService;
 
-        //ctor gets ILogInService, which allows for use of classes with ILogInService implemented.
-        public LogInController(ILogInService loginService)
+        //ctor gets IOrderService, which allows for use of classes with IOrderService implemented.
+        public OrderController(IOrderService orderService)
         {
-            _loginService = loginService;// connect functions.
+            _orderService = orderService; //connect functions.
         }
 
-        //EXAMPLE: https://localhost:5001/api/login
+        //EXAMPLE: https://localhost:5001/api/order
         [HttpGet]//ALL
         public async Task<IActionResult> GetAll()
         {
             try
             {
-                var logins = await _loginService.GetAllLogIns();
+                var orders = await _orderService.GetAllOrders();
                 //throw new Exception("Planned fail...");//Used to fail Tests
-                return Ok(logins);
+                return Ok(orders);
             }
             catch(Exception ex)
             {
                 return Problem(ex.Message);
             }
-           
         }
 
-        //EXAMPLE: https://localhost:5001/api/login/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
+        //EXAMPLE: https://localhost:5001/api/order/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
         [HttpGet("{id}")]//GetById
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             try
             {
-                var login = await _loginService.GetLogInById(id);
-                if(login == null)
+                var order = await _orderService.GetOrderById(id);
+                if(order == null)
                 {
                     return NotFound();
                 }
-                return Ok(login);
+                return Ok(order);
             }
             catch(Exception ex)
             {
@@ -58,38 +57,37 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
-        //EXAMPLE: https://localhost:5001/api/login
+        //EXAMPLE: https://localhost:5001/api/order
         [HttpPost]
-        public async Task<IActionResult> Create(LogIn login)
+        public async Task<IActionResult> Create(Order order)
         {
             try
             {
-                var newLogIn = await _loginService.Create(login);
-                if (newLogIn == null)
+                var newOrder = await _orderService.Create(order);
+                if(newOrder == null)
                 {
-                    return BadRequest("Login ERROR.... ");
+                    return BadRequest("Order ERROR...");
                 }
-                return Ok(newLogIn);
+                return Ok(newOrder);
             }
             catch(Exception ex)
             {
                 return Problem(ex.Message);
             }
-            
         }
 
-        //EXAMPLE: https://localhost:5001/api/login/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
+        //EXAMPLE: https://localhost:5001/api/order/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] LogIn login)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Order order)
         {
             try
             {
-                var updateLogIn = await _loginService.Update(id, login);
-                if(updateLogIn == null)
+                var updateOrder = await _orderService.Update(id, order);
+                if(updateOrder == null)
                 {
-                    return BadRequest("Update Failed.");
+                    return BadRequest("Update Failed..");
                 }
-                return Ok(updateLogIn);
+                return Ok(updateOrder);
             }
             catch(Exception ex)
             {
@@ -97,20 +95,20 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
-        //EXAMPLE: https://localhost:5001/api/login/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
+        //EXAMPLE: https://localhost:5001/api/order/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             try
             {
-                var deleteLogin = await _loginService.Delete(id);
-                if(deleteLogin == null)
+                var deleteOrder = await _orderService.Delete(id);
+                if(deleteOrder == null)
                 {
                     return BadRequest("Delete Failed");
                 }
-                return Ok(deleteLogin);
+                return Ok(deleteOrder);
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 return Problem(ex.Message);
             }

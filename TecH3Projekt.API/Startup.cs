@@ -46,7 +46,9 @@ namespace TecH3Projekt.API
             //Scopes for Services NEEDED for injection implemintation in controllers.
             services.AddScoped<ILogInService, LogInService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IPictureService, PictureService>();
+
 
             /////////////////
             services.AddControllers()

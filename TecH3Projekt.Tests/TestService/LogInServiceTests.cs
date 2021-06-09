@@ -21,10 +21,6 @@ namespace TecH3Projekt.Tests.TestService
             _sut = new LogInService(_logInRepositoryMock.Object);
         }
 
-
-
-
-
         [Fact]
         public async Task Create_ShouldFailIfNullIsPassed()
         {
