@@ -1,7 +1,10 @@
 # TecH3Projekt-TwoBeatsThree
 Francis Owen, Matas Motuzas
 
-
+# Torsdag 10/06/21
+* Property controller finished.
+* Other controllers also complete.
+* 
 
 
 # Onsdag 09/06/2021
