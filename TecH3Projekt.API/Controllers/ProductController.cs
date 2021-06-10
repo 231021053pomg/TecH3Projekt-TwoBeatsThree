@@ -11,26 +11,26 @@ namespace TecH3Projekt.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PropertyController : ControllerBase
+    public class ProductController : ControllerBase
     {
         //inject service into controller.
-        private readonly IPropertyService _propertyService;
+        private readonly IProductService _productService;
 
-        //ctor gets IPropertyService, which allows for use of classes with IPropertyService implemented.
-        public PropertyController(IPropertyService propertyService)
+        //ctor gets IProductService, which allows for use of classes with IProductService implemented.
+        public ProductController(IProductService productService)
         {
-            _propertyService = propertyService;
+            _productService = productService;// connect readonly
         }
 
-        //EXAMPLE: https://localhost:5001/api/property
+        //EXAMPLE: https://localhost:5001/api/product
         [HttpGet]//ALL
         public async Task<IActionResult> GetAll()
         {
             try
             {
-                var properties = await _propertyService.GetAllProperties();
+                var products = await _productService.GetAllProducts();
                 //throw new Exception("Planned fail...");//Used to fail Tests
-                return Ok(properties);
+                return Ok(products);
             }
             catch(Exception ex)
             {
@@ -38,18 +38,18 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
-        //EXAMPLE: https://localhost:5001/api/property/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
+        //EXAMPLE: https://localhost:5001/api/product/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
         [HttpGet("{id}")]//GetById
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             try
             {
-                var property = await _propertyService.GetPropertyById(id);
-                if(property == null)
+                var product = await _productService.GetProductById(id);
+                if(product == null)
                 {
                     return NotFound();
                 }
-                return Ok(property);
+                return Ok(product);
             }
             catch(Exception ex)
             {
@@ -57,18 +57,18 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
-        //EXAMPLE: https://localhost:5001/api/property
+        //EXAMPLE: https://localhost:5001/api/product
         [HttpPost]
-        public async Task<IActionResult> Create(Property property)
+        public async Task<IActionResult> Create(Product product)
         {
             try
             {
-                var newProperty = await _propertyService.Create(property);
-                if(newProperty == null)
+                var newProduct = await _productService.Create(product);
+                if(newProduct == null)
                 {
-                    return BadRequest("Property ERROR....");
+                    return BadRequest("Product ERROR..");
                 }
-                return Ok(property);
+                return Ok(newProduct);
             }
             catch(Exception ex)
             {
@@ -76,18 +76,18 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
-        //EXAMPLE: https://localhost:5001/api/property/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
+        //EXAMPLE: https://localhost:5001/api/product/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Property property)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Product product)
         {
             try
             {
-                var updateProperty = await _propertyService.Update(id, property);
-                if(updateProperty == null)
+                var updateProduct = await _productService.Update(id, product);
+                if(updateProduct == null)
                 {
-                    return BadRequest("Update Failed.");
+                    return BadRequest("Update failed..");
                 }
-                return Ok(updateProperty);
+                return Ok(updateProduct);
             }
             catch(Exception ex)
             {
@@ -101,12 +101,12 @@ namespace TecH3Projekt.API.Controllers
         {
             try
             {
-                var deleteProperty = await _propertyService.Delete(id);
-                if(deleteProperty == null)
+                var deleteProduct = await _productService.Delete(id);
+                if(deleteProduct == null)
                 {
                     return BadRequest("Delete Failed..");
                 }
-                return Ok(deleteProperty);
+                return Ok(deleteProduct);
             }
             catch(Exception ex)
             {
