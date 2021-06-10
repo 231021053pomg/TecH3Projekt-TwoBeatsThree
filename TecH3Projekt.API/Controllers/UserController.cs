@@ -19,7 +19,7 @@ namespace TecH3Projekt.API.Controllers
         //ctor gets IUserService, which allows for use of classes with IUserService implemented.
         public UserController(IUserService userService)
         {
-            _userService = userService;// connect functions.
+            _userService = userService;// connect readonly
         }
 
         //EXAMPLE: https://localhost:5001/api/user

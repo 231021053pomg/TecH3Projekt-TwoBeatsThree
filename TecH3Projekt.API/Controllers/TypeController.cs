@@ -11,26 +11,25 @@ namespace TecH3Projekt.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PropertyController : ControllerBase
+    public class TypeController : ControllerBase
     {
         //inject service into controller.
-        private readonly IPropertyService _propertyService;
+        private readonly ITypeService _typeService;
 
-        //ctor gets IPropertyService, which allows for use of classes with IPropertyService implemented.
-        public PropertyController(IPropertyService propertyService)
+        //ctor gets ILogInService, which allows for use of classes with ILogInService implemented.
+        public TypeController( ITypeService typeService)
         {
-            _propertyService = propertyService;
+            _typeService = typeService;
         }
-
-        //EXAMPLE: https://localhost:5001/api/property
+        //EXAMPLE: https://localhost:5001/api/type
         [HttpGet]//ALL
         public async Task<IActionResult> GetAll()
         {
             try
             {
-                var properties = await _propertyService.GetAllProperties();
+                var proTypes = await _typeService.GetAllTypes();
                 //throw new Exception("Planned fail...");//Used to fail Tests
-                return Ok(properties);
+                return Ok(proTypes);
             }
             catch(Exception ex)
             {
@@ -38,18 +37,18 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
-        //EXAMPLE: https://localhost:5001/api/property/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
+        //EXAMPLE: https://localhost:5001/api/type/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
         [HttpGet("{id}")]//GetById
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             try
             {
-                var property = await _propertyService.GetPropertyById(id);
-                if(property == null)
+                var proType = await _typeService.GetTypeById(id);
+                if(proType == null)
                 {
                     return NotFound();
                 }
-                return Ok(property);
+                return Ok(proType);
             }
             catch(Exception ex)
             {
@@ -57,18 +56,18 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
-        //EXAMPLE: https://localhost:5001/api/property
+        //EXAMPLE: https://localhost:5001/api/type
         [HttpPost]
-        public async Task<IActionResult> Create(Property property)
+        public async Task<IActionResult> Create(Domain.Type proType)
         {
             try
             {
-                var newProperty = await _propertyService.Create(property);
-                if(newProperty == null)
+                var newProType = await _typeService.Create(proType);
+                if(newProType == null)
                 {
-                    return BadRequest("Property ERROR....");
+                    return BadRequest("Type ERROR..");
                 }
-                return Ok(property);
+                return Ok(newProType);
             }
             catch(Exception ex)
             {
@@ -76,18 +75,18 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
-        //EXAMPLE: https://localhost:5001/api/property/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
+        //EXAMPLE: https://localhost:5001/api/type/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Property property)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Domain.Type proType)
         {
             try
             {
-                var updateProperty = await _propertyService.Update(id, property);
-                if(updateProperty == null)
+                var updateProType = await _typeService.Update(id, proType);
+                if(updateProType == null)
                 {
-                    return BadRequest("Update Failed.");
+                    return BadRequest("Update Failed..");
                 }
-                return Ok(updateProperty);
+                return Ok(updateProType);
             }
             catch(Exception ex)
             {
@@ -101,12 +100,12 @@ namespace TecH3Projekt.API.Controllers
         {
             try
             {
-                var deleteProperty = await _propertyService.Delete(id);
-                if(deleteProperty == null)
+                var deleteProType = await _typeService.Delete(id);
+                if(deleteProType == null)
                 {
                     return BadRequest("Delete Failed..");
                 }
-                return Ok(deleteProperty);
+                return Ok(deleteProType);
             }
             catch(Exception ex)
             {
