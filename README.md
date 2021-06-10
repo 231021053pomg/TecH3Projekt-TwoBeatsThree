@@ -6,8 +6,8 @@ Francis Owen, Matas Motuzas
 
 # Onsdag 09/06/2021
 * Lavet en del af PictureController
-* Complete controller: User, LogIN.
-* Started Order Controller.
+* Complete controller: User, LogIN, Order
+* Started Property Controller.
 * Started LogInControllerTests.
 
 
