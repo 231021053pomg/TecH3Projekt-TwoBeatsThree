@@ -7,7 +7,7 @@ Francis Owen, Matas Motuzas
 * header  https://www.w3schools.com/howto/howto_css_style_header.asp
 * 
 * nav-bar https://www.w3schools.com/howto/howto_css_subnav.asp
-*         https://www.w3schools.com/howto/howto_js_topnav.asp
+* Nav2    https://www.w3schools.com/howto/howto_js_topnav.asp
 *         
 * footer  https://www.w3schools.com/howto/howto_css_fixed_footer.asp
 * Begun angular app.
