@@ -1,0 +1,47 @@
+header
+nav-bar
+footer
+
+product-page
+category-page
+login-page
+Search-page
+Cart
+Cart-item
+Filters
+Product-list
+product-item
+
+
+ADMIN
+
+CRUD kategorier, produkter, kunder/medarbejdere, Overblik over ordrer der er oprerrer igennem kurven
+alt gemt bag et login
+skal være menu
+
+
+
+-app
+
+---------components
+
+----------------shared
+------------------------.nav-bar
+------------------------.header
+------------------------.footer
+
+----------------shoppingCart
+------------------------.filters
+
+------------------------Product
+--------------------------------.product-item
+--------------------------------.product-list
+
+------------------------Cart
+--------------------------------.cart
+--------------------------------.cart-item
+
+------------------------
+
+---------Services
+
