@@ -10,6 +10,7 @@ Francis Owen, Matas Motuzas
 *         https://www.w3schools.com/howto/howto_js_topnav.asp
 *         
 * footer  https://www.w3schools.com/howto/howto_css_fixed_footer.asp
+* Begun angular app.
 
 
 # Torsdag 10/06/21
