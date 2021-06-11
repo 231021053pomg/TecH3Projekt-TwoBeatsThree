@@ -1,6 +1,10 @@
 # TecH3Projekt-TwoBeatsThree
 Francis Owen, Matas Motuzas
 
+# Fridag 11/06/2021
+* https://www.youtube.com/watch?v=k1kb-Aqy1t4 
+
+
 # Torsdag 10/06/21
 * Property controller finished.
 * Other controllers also complete.
@@ -21,7 +25,6 @@ Francis Owen, Matas Motuzas
 
 
 # Mandag 07/06/2021
-* Var kun Matas alene hele dagen
 * Alle services og service interfaces blev oprettet og lavet færdigt
 * Fik lavet lidt i LogInServiceTests, men blev ikke færdig. (lavet i forhold til exempel)
 * ProductReposiotryTests blev lavet færdigt
