@@ -2,7 +2,14 @@
 Francis Owen, Matas Motuzas
 
 # Fridag 11/06/2021
-* https://www.youtube.com/watch?v=k1kb-Aqy1t4 
+* basic angular https://www.youtube.com/watch?v=k1kb-Aqy1t4 
+
+* header  https://www.w3schools.com/howto/howto_css_style_header.asp
+* 
+* nav-bar https://www.w3schools.com/howto/howto_css_subnav.asp
+*         https://www.w3schools.com/howto/howto_js_topnav.asp
+*         
+* footer  https://www.w3schools.com/howto/howto_css_fixed_footer.asp
 
 
 # Torsdag 10/06/21
