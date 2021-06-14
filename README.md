@@ -1,6 +1,12 @@
 # TecH3Projekt-TwoBeatsThree
 Francis Owen, Matas Motuzas
 
+
+# Mandag 14/06/21
+* Oprettet de fleste Components og nogle Services i Angular.
+* Skrev HTML delen af CRUD type og lidt ag CRUD user.
+
+
 # Fridag 11/06/2021
 * basic angular https://www.youtube.com/watch?v=k1kb-Aqy1t4 
 * header  https://www.w3schools.com/howto/howto_css_style_header.asp
