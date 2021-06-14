@@ -5,6 +5,8 @@ Francis Owen, Matas Motuzas
 # Mandag 14/06/21
 * Oprettet de fleste Components og nogle Services i Angular.
 * Skrev HTML delen af CRUD type og lidt ag CRUD user.
+* Setup Routing for navigation.
+* Started on userService.
 
 
 # Fridag 11/06/2021
