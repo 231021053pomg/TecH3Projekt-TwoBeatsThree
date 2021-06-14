@@ -1,2 +1,15 @@
 <p>users works!</p>
 
+
+<input  id="firstname" #firstname >
+<input  id="lastname" #lastname >
+
+<button (click)="
+    add(firstname.value, lastname.value);
+    firstname.value = '';
+    lastname.value = '';
+">Save</button>
+
+{{ userFirstname }}
+
+<p *ngFor="let user of users">{{ user }}</p>
