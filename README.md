@@ -1,10 +1,20 @@
 # TecH3Projekt-TwoBeatsThree
 Francis Owen, Matas Motuzas
 
+# Fridag 11/06/2021
+* basic angular https://www.youtube.com/watch?v=k1kb-Aqy1t4 
+* header  https://www.w3schools.com/howto/howto_css_style_header.asp
+* nav-bar https://www.w3schools.com/howto/howto_css_subnav.asp
+* Nav2    https://www.w3schools.com/howto/howto_js_topnav.asp   
+* footer  https://www.w3schools.com/howto/howto_css_fixed_footer.asp
+
+* Begun angular app.
+* Made some basic header, navbar, footer, user
+
+
 # Torsdag 10/06/21
 * Property controller finished.
 * Other controllers also complete.
-* 
 
 
 # Onsdag 09/06/2021
@@ -21,7 +31,6 @@ Francis Owen, Matas Motuzas
 
 
 # Mandag 07/06/2021
-* Var kun Matas alene hele dagen
 * Alle services og service interfaces blev oprettet og lavet færdigt
 * Fik lavet lidt i LogInServiceTests, men blev ikke færdig. (lavet i forhold til exempel)
 * ProductReposiotryTests blev lavet færdigt
