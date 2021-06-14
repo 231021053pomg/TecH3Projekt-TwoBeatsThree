@@ -1,1 +1,4 @@
 <p>users works!</p>
+
+<input  id="firstname" #firstname >
+<button (click)="add(firstname.value); firstname.value = ''; ">Save</button>
