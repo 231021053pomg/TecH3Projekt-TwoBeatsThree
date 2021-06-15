@@ -1,1 +1,84 @@
-<p>crudproduct works!</p>
+
+
+
+<!-- Create  -->
+<h2> Create new product </h2>
+<form>
+    <label for="nProductName">Product Name:</label>
+    <br>
+    <input type="text" id="nProductName" name="nProductName">
+    <br>
+    <label for="nProductPrice">Price:</label>
+    <br>
+    <input type="text" id="nProductPrice" name="nProductPrice">
+    <br>
+    <label for="nProductDescription">Description:</label>
+    <br>
+    <input type="text" id="nProductDescription" name="nProductDescription">
+    <br>
+    <label for="nProductPictures">Pictures:</label>
+    <br>
+    <input type="text" id="nProductPictures" name="nProductPictures">
+    <br>
+    <button type="button" id="createProduct" >Create</button>
+    <br>
+</form>
+<hr>
+
+
+<!-- Read  -->
+<h2> Read Table of all products </h2>
+<table style="border-style: solid;">
+  <tr>
+    <th style="border-style: solid;">Product ID</th>
+    <th style="border-style: solid;">Product Name</th>
+    <th style="border-style: solid;">Price</th> 
+    <th style="border-style: solid;">Description</th> 
+    <th style="border-style: solid;">Pictures</th> 
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Blue T-shirts</td>
+    <td>200</td>
+    <td>A blue t-shirt</td>
+    <td>bTshirt.png</td>
+  </tr>
+</table>
+<hr>
+
+
+<!-- Update  -->
+<h2> Update existing product </h2>
+<form>
+    <label for="uProductName">Product Name:</label>
+    <br>
+    <input type="text" id="uProductName" name="uProductName">
+    <br>
+    <label for="uProductPrice">Price:</label>
+    <br>
+    <input type="text" id="uProductPrice" name="uProductPrice">
+    <br>
+    <label for="uProductDescription">Description:</label>
+    <br>
+    <input type="text" id="uProductDescription" name="uProductDescription">
+    <br>
+    <label for="uProductPictures">Pictures:</label>
+    <br>
+    <input type="text" id="uProductPictures" name="uProductPictures">
+    <br>
+    <button type="button" id="updateProduct" >Update</button>
+    <br>
+</form>
+<hr>
+
+
+<!-- Delete  -->
+<h2> Delete existing product by ID </h2>
+<form>
+    <label for="dProductById">The ID of existing product:</label>
+    <br>
+    <input type="text" id="dProductById" name="dProductById">
+    <br>
+    <button type="button" id="deleteProduct" >Delete</button>
+    <br>
+</form>
