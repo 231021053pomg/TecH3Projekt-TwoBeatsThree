@@ -2,6 +2,11 @@
 Francis Owen, Matas Motuzas
 
 
+
+# Tirsdag 15/06/21
+* 
+
+
 # Mandag 14/06/21
 * Oprettet de fleste Components og nogle Services i Angular.
 * Skrev HTML delen af CRUD type og lidt ag CRUD user.
