@@ -5,15 +5,26 @@
 <form>
     <label for="ntype">The name of new type:</label>
     <br>
-    <input type="text" id="ntype" name="ntype">
+    <input id="ntype" #ntype >
     <br>
-    <button type="button" id="create" >Create</button>
+    <button (click)="
+      add(ntype.value);
+      ntype.value = '';
+    " >Create</button>
     <br>
 </form>
 <hr>
 
 
 <!-- Read  -->
+<!-- //TEST LIST OF ALL TYPES. -->
+<ul *ngFor="let category of categories">
+  <li>
+    <a routerLink="/category/{{category.id}}">{{ category.typeName }}</a>
+    <a (click)="delete(category)">[X]</a>
+  </li>
+</ul>
+
 <h2> Read Table of all clothing Types </h2>
 <table style="border-style: solid;">
   <tr>

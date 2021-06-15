@@ -22,6 +22,8 @@ import { CRUDUsersComponent } from './Components/Admin/crudusers/crudusers.compo
 import { ReadOrdersComponent } from './Components/Admin/read-orders/read-orders.component';
 import { SearchComponent } from './Components/Pages/search/search.component';
 
+import { CategoryDetailComponent } from './category-detail/category-detail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { SearchComponent } from './Components/Pages/search/search.component';
     CRUDProductComponent,
     CRUDUsersComponent,
     ReadOrdersComponent,
-    SearchComponent
+    SearchComponent,
+    CategoryDetailComponent
   ],
   imports: [
     BrowserModule,
