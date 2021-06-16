@@ -2,6 +2,13 @@
 Francis Owen, Matas Motuzas
 
 
+
+# Tirsdag 15/06/21
+* Blev næsten færdig med HTML af CRUDusers, CRUDproduct, LoginForm/register, Category, Home...
+* Started on CRUD functions for Category/Type. finished read, create, delete. continuing with update.
+* Remember CORS setup in API startup file. this is needed for communication between API and angular.
+
+
 # Mandag 14/06/21
 * Oprettet de fleste Components og nogle Services i Angular.
 * Skrev HTML delen af CRUD type og lidt ag CRUD user.
