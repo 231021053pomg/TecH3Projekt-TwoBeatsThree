@@ -6,3 +6,11 @@
     color: white;
     font-size: 20px;
 }
+
+.button {
+    padding: 20px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 20px;
+}
