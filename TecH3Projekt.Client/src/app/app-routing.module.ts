@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { CRUDProductComponent } from './Components/Admin/crudproduct/crudproduct.component';//
 import { CRUDTypeComponent } from './Components/Admin/crudtype/crudtype.component';//
 import { CRUDUsersComponent } from './Components/Admin/crudusers/crudusers.component';
@@ -17,6 +18,9 @@ const routes: Routes = [
   { path: '', redirectTo: '/users', pathMatch:'full'}, //Start at Home page.
   
   { path: 'users', component:UsersComponent}, //USE for testing
+
+  //Detail route
+  {path: 'category/:id', component:CategoryDetailComponent},
 
   //PAGE Routes.
   { path: 'home', component:HomeComponent},

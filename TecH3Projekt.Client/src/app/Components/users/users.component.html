@@ -10,6 +10,11 @@
     lastname.value = '';
 ">Save</button>
 
-{{ userFirstname }}
 
-<p *ngFor="let user of users">{{ user }}</p>
+
+<ul *ngFor="let user of users">
+    <li>
+        {{ user.firstName }}
+        <!-- <a (click)="delete(user)" >[X]</a> -->
+    </li>
+</ul>

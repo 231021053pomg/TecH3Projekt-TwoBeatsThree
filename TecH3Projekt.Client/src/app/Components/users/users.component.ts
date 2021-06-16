@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/Services/Pages/users.service';// 
+import { User } from '../Domain';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +10,7 @@ import { UsersService } from 'src/app/Services/Pages/users.service';//
 export class UsersComponent implements OnInit {
 
   userFirstname: string = "Test";
-  users: string[] = [];
+  users: User[] = [];
 
   constructor(
     private userService:UsersService//ADDED for service
@@ -17,13 +18,19 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.users.push("Benny");
-    this.users.push("Carl");
-    console.log(this.users);
+    this.getUsers();
+  }
+
+  getUsers(): void {
+    this.userService.getUser()
+    .subscribe(users => this.users = users);
   }
 
   add(firstName: string,lastName: string):void{
-    //this.userFirstname = firstName;
+
+    this.userService.addUser({firstName, lastName} as User)
+    .subscribe(user => {this.users.push(user) });
+
   }
 
 }
