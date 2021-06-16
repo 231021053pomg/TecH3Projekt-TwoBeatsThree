@@ -1,32 +1,59 @@
 
 
 
+
 <!-- Create  -->
 <h2> Create new product </h2>
 <form>
     <label for="nProductName">Product Name:</label>
     <br>
-    <input type="text" id="nProductName" name="nProductName">
+    <input type="text" id="nProductName" name="nProductName" #nProductName>
     <br>
+
     <label for="nProductPrice">Price:</label>
     <br>
-    <input type="text" id="nProductPrice" name="nProductPrice">
+    <input type="text" id="nProductPrice" name="nProductPrice" #nProductPrice>
     <br>
+
     <label for="nProductDescription">Description:</label>
     <br>
-    <input type="text" id="nProductDescription" name="nProductDescription">
+    <input type="text" id="nProductDescription" name="nProductDescription" #nProductDescription>
     <br>
+
     <label for="nProductPictures">Pictures:</label>
     <br>
-    <input type="text" id="nProductPictures" name="nProductPictures">
+    <input type="text" id="nProductPictures" name="nProductPictures" #nProductPictures>
     <br>
-    <button type="button" id="createProduct" >Create</button>
+
+    <button type="button" (click)="
+      add(nProductName.value);
+      nProductName.value = '';
+
+      add(nProductPrice.value);
+      nProductPrice.value = '';
+
+      add(nProductDescription.value);
+      nProductDescription.value = '';
+
+      add(nProductPictures.value);
+      nProductPictures.value = '';
+      " >Create</button>
     <br>
 </form>
+
 <hr>
 
 
 <!-- Read  -->
+<!-- //TEST LIST OF ALL TYPES. -->
+<ul *ngFor="let product of products">
+  <li>
+    <a routerLink="/Update-product/{{ product.id }}">{{ product.productName }}</a>
+    <a (click)="delete(product)">[X]</a>
+  </li>
+</ul>
+
+
 <h2> Read Table of all products </h2>
 <table style="border-style: solid;">
   <tr>
