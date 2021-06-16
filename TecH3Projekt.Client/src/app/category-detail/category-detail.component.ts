@@ -13,6 +13,7 @@ export class CategoryDetailComponent implements OnInit {
 
   id: number = 0;
   category: Category = { typeName: "", id: 0 };
+  message: string ="";
 
   constructor(
     private route:ActivatedRoute,
@@ -21,14 +22,29 @@ export class CategoryDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getCategory();
+    this.id = (this.route.snapshot.paramMap.get('id') || 0) as number;
+
+    //RETURN to CRUD-types if data incorrect.
+    if(this.id == null || this.id == 0){
+      this.location.go('/CRUD-types');//url of CRUD-types
+    }
+    else{
+      this.getCategory();
+    }
+    
   }
 
   getCategory(){
-    this.id = (this.route.snapshot.paramMap.get('id') || 0) as number;
+    
     this.categoryService.getCategory(this.id).subscribe(
-      category => this.category = category)
+      category => (category != null ? this.category = category : this.location.go('/CRUD-types'))
+      )
   }
 
+  //save
+  save():void{
+    this.categoryService.updateCategory(this.id, this.category)
+    .subscribe(category => this.category = category);
+  }
 
 }

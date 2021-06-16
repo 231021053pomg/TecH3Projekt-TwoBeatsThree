@@ -9,7 +9,7 @@ import { Category } from 'src/app/Components/Domain';
   providedIn: 'root'
 })
 export class CategoryService {
-  apiUrl: string = "https://localhost:5001/api/category";
+  apiUrl: string = "https://localhost:5001/api/type";
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type' : 'application/json' })
@@ -37,8 +37,13 @@ export class CategoryService {
 
   }
 
+  updateCategory(id:number , category:Category): Observable<Category>{
+    return this.http.put<Category>(`${this.apiUrl}/${id}`, category, this.httpOptions)
+    .pipe(catchError(this.handleError<any>('updateCategory')));
+  }
+
   deleteCategory(id:Number): Observable<Category>{
-    return this.http.delete<Category>(`${this.apiUrl}/${id}`)
+    return this.http.delete<Category>(`${this.apiUrl}/${id}`, this.httpOptions)
     .pipe(catchError(this.handleError<any>('deleteCategory'))
     );
   }

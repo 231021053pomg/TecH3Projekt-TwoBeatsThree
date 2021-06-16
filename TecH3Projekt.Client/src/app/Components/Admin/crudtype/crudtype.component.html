@@ -20,7 +20,7 @@
 <!-- //TEST LIST OF ALL TYPES. -->
 <ul *ngFor="let category of categories">
   <li>
-    <a routerLink="/category/{{category.id}}">{{ category.typeName }}</a>
+    <a routerLink="/Update-type/{{ category.id }}">{{ category.typeName }}</a>
     <a (click)="delete(category)">[X]</a>
   </li>
 </ul>

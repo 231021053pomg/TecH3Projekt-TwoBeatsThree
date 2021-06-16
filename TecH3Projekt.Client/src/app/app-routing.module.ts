@@ -4,6 +4,7 @@ import { CategoryDetailComponent } from './category-detail/category-detail.compo
 import { CRUDProductComponent } from './Components/Admin/crudproduct/crudproduct.component';//
 import { CRUDTypeComponent } from './Components/Admin/crudtype/crudtype.component';//
 import { CRUDUsersComponent } from './Components/Admin/crudusers/crudusers.component';
+
 import { ReadOrdersComponent } from './Components/Admin/read-orders/read-orders.component';
 import { LoginFormComponent } from './Components/login-form/login-form.component';//
 import { CategoryComponent } from './Components/Pages/category/category.component';//
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'users', component:UsersComponent}, //USE for testing
 
   //Detail route
-  {path: 'category/:id', component:CategoryDetailComponent},
+  {path: 'Update-type/:id', component:CategoryDetailComponent},
 
   //PAGE Routes.
   { path: 'home', component:HomeComponent},

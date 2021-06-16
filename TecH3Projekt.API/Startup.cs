@@ -21,6 +21,8 @@ namespace TecH3Projekt.API
 {
     public class Startup
     {
+        readonly string AllowSpecificOrigins = "_AllowSpecificOrigins";//
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,6 +33,20 @@ namespace TecH3Projekt.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // CORS configuration needed in order to allow our angular app to communicate with server
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: AllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200")
+                                .AllowAnyHeader()
+                                .WithMethods("GET", "POST", "PUT", "DELETE");
+                    });
+            });
+
+
             services.AddDbContext<TecH3ProjectDbContext>(//
                 options => options.UseSqlServer(Configuration.GetConnectionString("ProjectConnection"))
                 );
@@ -41,6 +57,7 @@ namespace TecH3Projekt.API
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();//
             services.AddScoped<IPictureRepository, PictureRepository>();//
+            services.AddScoped<ITypeRepository, TypeRepository>();//
 
 
             //Scopes for Services NEEDED for injection implemintation in controllers.
@@ -48,6 +65,7 @@ namespace TecH3Projekt.API
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IPictureService, PictureService>();
+            services.AddScoped<ITypeService, TypeService>();
 
 
             /////////////////
@@ -59,6 +77,9 @@ namespace TecH3Projekt.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TecH3Projekt.API", Version = "v1" });
             });
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +95,8 @@ namespace TecH3Projekt.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(AllowSpecificOrigins);//
 
             app.UseAuthorization();
 
