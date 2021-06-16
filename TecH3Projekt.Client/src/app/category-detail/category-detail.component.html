@@ -1,7 +1,8 @@
 <p>category-detail works!</p>
-<a routerLink="/categories">Back</a>
 
-<input value= "{{ category.typeName }}">
-<button> save </button>
+<input [(ngModel)]= "category.typeName">
+<button (click)="save()"> Update </button>
+<a routerLink="/CRUD-types">Back</a>
+<p>{{ message }}</p>
 
 
