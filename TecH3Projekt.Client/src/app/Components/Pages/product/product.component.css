@@ -1,0 +1,41 @@
+
+
+
+/*CSS example for product card
+https://www.w3schools.com/howto/howto_css_product_card.asp */
+
+.card {
+    max-width: 300px;
+    margin: auto;
+    font-family: arial;
+    text-align: center;
+}
+  
+.price {
+    color: grey;
+    font-size: 22px;
+    text-align: center;
+}
+  
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+  
+.card button:hover {
+    opacity: 0.7;
+    text-align: center;
+}
+
+.quantity {
+    color: rgb(255, 0, 0);
+    font-size: 22px;
+    text-align: center;
+}
