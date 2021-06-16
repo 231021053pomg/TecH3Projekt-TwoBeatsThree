@@ -2,8 +2,11 @@
 Francis Owen, Matas Motuzas
 
 
+
 # Onsdag 16/06/21
-* 
+* Blev færdig med basic HTML/CSS til Angular
+* CRUDtype i Angular blev til funktionelt component 
+* Der blev lavet en del af CRUDproduct
 
 
 # Tirsdag 15/06/21
