@@ -2,6 +2,9 @@
 Francis Owen, Matas Motuzas
 
 
+# Onsdag 16/06/21
+* 
+
 
 # Tirsdag 15/06/21
 * Blev næsten færdig med HTML af CRUDusers, CRUDproduct, LoginForm/register, Category, Home...
