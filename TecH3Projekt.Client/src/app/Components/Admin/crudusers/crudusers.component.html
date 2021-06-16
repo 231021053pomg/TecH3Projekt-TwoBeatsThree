@@ -6,31 +6,44 @@
 <form>
     <label for="firstNameUser">Firstname:</label>
     <br>
-    <input type="text" id="firstNameUser" name="firstNameUser">
+    <input id="firstNameUser" #firstNameUser>
     <br>
     <label for="lastNameUser">Lastname:</label>
     <br>
-    <input type="text" id="lastNameUser" name="lastNameUser">
+    <input id="lastNameUser" #lastNameUser>
     <br>
     <label for="addressUser">Address:</label>
     <br>
-    <input type="text" id="addressUser" name="addressUser">
+    <input id="addressUser" #addressUser>
     <br>
     <label for="postNrUser">PostNr:</label>
     <br>
-    <input type="text" id="postNrUser" name="postNrUser">
+    <input type="number" id="postNrUser" #postNrUser>
     <br>
     <label for="cityUser">City:</label>
     <br>
-    <input type="text" id="cityUser" name="cityUser">
+    <input id="cityUser" #cityUser>
     <br>
-    <button type="button" id="createUser" >Create</button>
+    <button>Create</button>
+    <button (click)="
+      add(firstNameUser.value, 
+          lastNameUser.value,
+          addressUser.value,
+          postNrUser.value,
+          cityUser.value);
+      firstNameUser.value = '';
+      lastNameUser.value = '';
+      addressUser.value = '';
+      postNrUser.value = '';
+      cityUser.value = '';
+    ">Create</button>
     <br>
 </form>
 <hr>
 
 
 <!-- Read  -->
+
 <h2> Read Table of all users </h2>
 <table style="border-style: solid;">
   <tr>
