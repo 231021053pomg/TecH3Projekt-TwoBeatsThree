@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers(): void {
-    this.userService.getUser()
+    this.userService.getUsers()
     .subscribe(users => this.users = users);
   }
 

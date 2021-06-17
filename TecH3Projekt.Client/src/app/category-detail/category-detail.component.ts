@@ -44,7 +44,14 @@ export class CategoryDetailComponent implements OnInit {
   //save
   save():void{
     this.categoryService.updateCategory(this.id, this.category)
-    .subscribe(category => this.category = category);
+    .subscribe(category => {
+      this.category = category
+      this.message ="Category BLANK updated"
+
+      setTimeout(() => {
+        this.message = "";
+      }, 3000);//Message times out.
+    });
   }
 
 }

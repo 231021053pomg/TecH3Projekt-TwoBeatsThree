@@ -19,7 +19,7 @@ export class UsersService {
     private http:HttpClient 
   ) { }
 
-  getUser(): Observable<User[]>{
+  getUsers(): Observable<User[]>{
     return this.http.get<User[]>(this.apiUrl);
   }
 

@@ -18,12 +18,12 @@
 
 <!-- Read  -->
 <!-- //TEST LIST OF ALL TYPES. -->
-<ul *ngFor="let category of categories">
+<!-- <ul *ngFor="let category of categories">
   <li>
     <a routerLink="/Update-type/{{ category.id }}">{{ category.typeName }}</a>
     <a (click)="delete(category)">[X]</a>
   </li>
-</ul>
+</ul> -->
 
 
 <h2> Read Table of all clothing Types </h2>
@@ -32,38 +32,14 @@
     <th style="border-style: solid;">Type ID</th>
     <th style="border-style: solid;">Type Name</th> 
   </tr>
-  <tr>
-    <td>1</td>
-    <td>T-shirts</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Pants</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Jackets</td>
+  <tr *ngFor="let category of categories">
+    <td><a>{{ category.id }}</a></td>
+    <td><a routerLink="/Update-type/{{ category.id }}">{{ category.typeName }}</a>
+      <a (click)="delete(category)">[X]</a>
+    </td>
   </tr>
 </table>
 <hr>
-
-
-<!-- Update  -->
-<h2> Update existing clothing type </h2>
-<form>
-    <label for="type">The ID of existing type:</label>
-    <br>
-    <input type="text" id="type" name="type">
-    <br>
-    <label for="utype">The updated type name:</label>
-    <br>
-    <input type="text" id="utype" name="utype">
-    <br>
-    <button type="button" id="update" >Update</button>
-    <br>
-</form>
-<hr>
-
 
 <!-- Delete  -->
 <h2> Delete existing clothing type </h2>
