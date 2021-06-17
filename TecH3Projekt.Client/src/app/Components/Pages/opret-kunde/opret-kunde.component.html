@@ -1,1 +1,58 @@
-<p>opret-kunde works!</p>
+<h4>Create your new account</h4>
+<form>
+    <label for="newAccEmail">Email:</label>
+    <br>
+    <input type="text" id="newAccEmail" #newAccEmail>
+    <br>
+    <label for="newAccPassword">Password:</label>
+    <br>
+    <input type="text" id="newAccPassword" #newAccPassword>
+    <!-- <br>
+    <label for="newAccRepeatPassword">Repeat password:</label>
+    <br>
+    <input type="text" id="newAccRepeatPassword" #newAccRepeatPassword> -->
+    <br>
+    <label for="newAccFirstName">FirstName:</label>
+    <br>
+    <input type="text" id="newAccFirstName" #newAccFirstName>
+    <br>
+    <label for="newAccLastName">LastName:</label>
+    <br>
+    <input type="text" id="newAccLastName" #newAccLastName>
+    <br>
+    <label for="newAccAddress">Address:</label>
+    <br>
+    <input type="text" id="newAccAddress" #newAccAddress>
+    <br>
+    <label for="newAccPostNr">PostNr:</label>
+    <br>
+    <input type="text" id="newAccPostNr" #newAccPostNr>
+    <br>
+    <label for="newAccCity">City:</label>
+    <br>
+    <input type="text" id="newAccCity" #newAccCity>
+    <br>
+    <button>Create</button>
+    
+    <!-- <button (click)="
+        add(newAccEmail.value,
+        newAccPassword.value,
+        newAccFirstName.value,
+        newAccLastName.value,
+        newAccAddress.value,
+        newAccPostNr.value,
+        newAccCity.value);
+        
+        newAccEmail.value = '';
+        newAccPassword.value = '';
+        newAccFirstName.value = '';
+        newAccLastName.value = '';
+        newAccAddress.value = '';
+        newAccPostNr.value = '';
+        newAccCity.value = '';
+        "></button> -->
+
+    <a routerLink="/login">Back</a>
+    <br>
+</form>
+

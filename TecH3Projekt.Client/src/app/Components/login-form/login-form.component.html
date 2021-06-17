@@ -6,13 +6,14 @@
 <form>
     <label for="logInEmail">Email:</label>
     <br>
-    <input type="text" id="logInEmail" name="logInEmail">
+    <input id="logInEmail" #logInEmail>
     <br>
     <label for="logInPassword">Password:</label>
     <br>
-    <input type="text" id="logInPassword" name="logInPassword">
+    <input id="logInPassword" #logInPassword>
     <br>
-    <button type="button" id="createProduct" >LogIn</button>
+    <button type="button" id="login" >LogIn</button>
+    <a routerLink="/opretKunde">Create an Account</a>
     <br>
 </form>
 
@@ -20,7 +21,7 @@
 <hr>
 <br>
 
-<h4>Or create your new account</h4>
+<!-- <h4>Or create your new account</h4>
 <form>
     <label for="newAccEmail">Email:</label>
     <br>
@@ -56,4 +57,4 @@
     <br>
     <button type="button" id="createLogIn" >Create</button>
     <br>
-</form>
+</form> -->

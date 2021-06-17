@@ -47,8 +47,8 @@ namespace TecH3Projekt.API.Services
         // UPDATE USER
         public async Task<User> Update(int id, User user)
         {
-            await _userRepository.Update(id, user);
-            return user;
+            var editUser = await _userRepository.Update(id, user);
+            return editUser;
         }
 
 

@@ -33,20 +33,10 @@
   </tr>
   <tr *ngFor="let category of categories">
     <td><a>{{ category.id }}</a></td>
-    <td><a routerLink="/Update-type/{{ category.id }}">{{ category.typeName }}</a>
+    <td>
+      <a routerLink="/Update-type/{{ category.id }}">{{ category.typeName }}</a>
       <a (click)="delete(category)">[X]</a>
     </td>
   </tr>
 </table>
 <hr>
-
-<!-- Delete  -->
-<h2> Delete existing clothing type </h2>
-<form>
-    <label for="dtype">The ID of existing type:</label>
-    <br>
-    <input type="text" id="dtype" name="dtype">
-    <br>
-    <button type="button" id="delete" >Delete</button>
-    <br>
-</form>

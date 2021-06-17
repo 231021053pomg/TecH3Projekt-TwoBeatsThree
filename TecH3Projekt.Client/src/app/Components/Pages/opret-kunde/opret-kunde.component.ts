@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OpretKundeService } from 'src/app/Services/Pages/opret-kunde.service';
+import { LogIn, User } from '../../Domain';
 
 @Component({
   selector: 'app-opret-kunde',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpretKundeComponent implements OnInit {
 
-  constructor() { }
+  logins: LogIn[] =[];
+
+  constructor(
+    private opretService:OpretKundeService
+  ) { }
 
   ngOnInit(): void {
   }
+
+  // addLogIn(email: string, password: string):void{
+  //   this.opretService.addLogIn({email, password} as LogIn)
+  //   .subscribe(login => {this.logins.push(login) });
+  // }
 
 }
