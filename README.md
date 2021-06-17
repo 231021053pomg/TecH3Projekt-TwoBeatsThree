@@ -11,7 +11,10 @@ We need to concentrate on:
 -------
 5. LogIn/Opret LogIn
 
-* 
+* failed to complete CRUD Users. there is issue with Login and User interaction that i don't understand.
+* CRUD product needs troubleshooting.
+*  Started work on login and opret kunde client side.
+*  opret kunde has same issue with simultanious LogIn and User creation.
 
 
 
