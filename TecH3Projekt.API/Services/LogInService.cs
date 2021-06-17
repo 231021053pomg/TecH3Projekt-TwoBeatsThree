@@ -37,16 +37,16 @@ namespace TecH3Projekt.API.Services
         // CREATE LOGIN
         public async Task<LogIn> Create(LogIn logIn)
         {
-            logIn = await _logInRepository.Create(logIn);
-            return logIn;
+             var newlogIn = await _logInRepository.Create(logIn);
+            return newlogIn;
         }
 
 
         // UPDATE LOGIN
         public async Task<LogIn> Update(int id, LogIn logIn)
         {
-            await _logInRepository.Update(id, logIn);
-            return logIn;
+            var editLogIn = await _logInRepository.Update(id, logIn);
+            return editLogIn;
         }
 
 

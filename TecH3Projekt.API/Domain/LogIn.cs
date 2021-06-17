@@ -22,6 +22,6 @@ namespace TecH3Projekt.API.Domain
             UserProfile = new List<User>();
         }
         public List<User> UserProfile { get; set; }
-        //public int UserId { get; set; }
+        
     }
 }

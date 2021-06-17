@@ -1,9 +1,22 @@
-
-
-
 <!-- Create  -->
 <h2> Create new user </h2>
 <form>
+  <label for="loginUserEmail">Email:</label>
+    <br>
+    <input id="loginUserEmail" #loginUserEmail>
+    <br>
+    <label for="loginUserCode">Code:</label>
+    <br>
+    <input id="loginUserCode" #loginUserCode>
+    <br>
+    <!-- <button>Save Admin Login</button> -->
+    <button (click)="
+      addAdmin(loginUserEmail.value,
+          loginUserCode.value);
+          loginUserEmail.value = '';
+          loginUserCode.value = '';
+    ">Save Admin Login</button>
+    <br>
     <label for="firstNameUser">Firstname:</label>
     <br>
     <input id="firstNameUser" #firstNameUser>
@@ -24,7 +37,6 @@
     <br>
     <input id="cityUser" #cityUser>
     <br>
-    <button>Create</button>
     <button (click)="
       add(firstNameUser.value, 
           lastNameUser.value,
@@ -44,6 +56,12 @@
 
 <!-- Read  -->
 
+<!-- <ul *ngFor="let login of logins">
+  <li>
+    <a>{{ login.email }}</a>  
+  </li>
+</ul> -->
+
 <h2> Read Table of all users </h2>
 <table style="border-style: solid;">
   <tr>
@@ -54,13 +72,16 @@
     <th style="border-style: solid;">PostNr</th> 
     <th style="border-style: solid;">City</th> 
   </tr>
-  <tr>
-    <td>1</td>
-    <td>Someone</td>
-    <td>Something</td>
-    <td>Somestreet 12</td>
-    <td>5070</td>
-    <td>Sarum</td>
+  <tr *ngFor="let user of users">
+    <td><a>{{ user.id }}</a></td>
+    <td><a routerLink="/Update-user/{{ user.id }}">{{ user.firstName }}</a></td>
+    <td><a>{{ user.lastName }}</a></td>
+    <td><a>{{ user.address }}</a> </td>
+    <td><a>{{ user.postNr }}</a></td>
+    <td>
+      <a>{{ user.city }}</a>
+      <a (click)="delete(user)">[X]</a>
+    </td>
   </tr>
 </table>
 <hr>
@@ -93,15 +114,3 @@
   <br>
 </form>
 <hr>
-
-
-<!-- Delete  -->
-<h2> Delete existing clothing type </h2>
-<form>
-    <label for="deleteUserById">The ID of existing user:</label>
-    <br>
-    <input type="text" id="deleteUserById" name="deleteUserById">
-    <br>
-    <button type="button" id="deleteUser" >Delete</button>
-    <br>
-</form>

@@ -10,6 +10,7 @@ namespace TecH3Projekt.API.Domain
     {
         [ForeignKey("LogIn.Id")]
         public int LogInId { get; set; }
+        public LogIn LogIn { get; set; }
 
 
         public string FirstName { get; set; }
@@ -17,6 +18,6 @@ namespace TecH3Projekt.API.Domain
         public string Address { get; set; }
         public int PostNr { get; set;}
         public string City { get; set; }
-        public LogIn LogIn { get; set; }
+        
     }
 }

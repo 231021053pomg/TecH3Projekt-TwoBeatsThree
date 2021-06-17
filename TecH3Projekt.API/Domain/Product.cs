@@ -11,6 +11,7 @@ namespace TecH3Projekt.API.Domain
     {
         [ForeignKey("Type.Id")]
         public int TypeId { get; set; }
+        public Type Type { get; set; }
 
         [Required]
         public string ProductName { get; set; }
@@ -26,6 +27,6 @@ namespace TecH3Projekt.API.Domain
             Pictures = new List<Picture>();
         }
         public List<Picture> Pictures { get; set; }//List is used for 1-to-M relation.
-        public Type Type { get; set; }
+        
     }
 }
