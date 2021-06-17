@@ -26,8 +26,8 @@ export class OpretKundeService {
   //   .pipe(catchError(this.handleError<any>('addLogin')));
   // }
 
-  // AddUser(login: LogIn): Observable<LogIn>{
-  //   return this.http.post<LogIn>(this.apiUrl, login, this.httpOptions)
+  // AddUser(user: User): Observable<User>{
+  //   return this.http.post<User>(this.apiUrl, user, this.httpOptions)
   //   .pipe(catchError(this.handleError<any>('addUser')))
   // }
 
