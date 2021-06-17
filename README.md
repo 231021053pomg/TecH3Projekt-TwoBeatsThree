@@ -2,6 +2,18 @@
 Francis Owen, Matas Motuzas
 
 
+# Torsdag 17/06/21
+We need to concentrate on:
+1. Home page with 3 products from database
+2. Product page
+3. Products need to be added to shopping cart
+4. 3 categories with every product og specified category
+-------
+5. LogIn/Opret LogIn
+
+* 
+
+
 
 # Onsdag 16/06/21
 * Blev færdig med basic HTML/CSS til Angular
