@@ -16,9 +16,7 @@ export class CRUDTypeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this.getCategories();
-
   }
 
   getCategories(): void {
@@ -27,10 +25,8 @@ export class CRUDTypeComponent implements OnInit {
   }
 
   add(typeName: string):void{
-
     this.categoryService.addCategory({typeName} as Category)
     .subscribe(category => {this.categories.push(category) });
-
   }
 
   delete(category:Category):void {
