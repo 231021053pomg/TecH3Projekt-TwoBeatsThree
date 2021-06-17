@@ -20,24 +20,27 @@
     <input type="text" id="nProductDescription" name="nProductDescription" #nProductDescription>
     <br>
 
-    <label for="nProductPictures">Pictures:</label>
+    <label for="nProductType">Type:</label>
+    <br>
+    <input type="text" id="nProductType" name="nProductType" #nProductType>
+    <br>
+
+    <!-- <label for="nProductPictures">Pictures:</label>
     <br>
     <input type="text" id="nProductPictures" name="nProductPictures" #nProductPictures>
-    <br>
+    <br> -->
 
     <button type="button" (click)="
-      add(nProductName.value);
+      add(
+        nProductName.value,
+        nProductPrice.value,
+        nProductDescription.value,
+        nProductType.value);
       nProductName.value = '';
-
-      add(nProductPrice.value);
       nProductPrice.value = '';
-
-      add(nProductDescription.value);
       nProductDescription.value = '';
-
-      add(nProductPictures.value);
-      nProductPictures.value = '';
-      " >Create</button>
+      nProductType.value = '';
+     ">Create</button>
     <br>
 </form>
 

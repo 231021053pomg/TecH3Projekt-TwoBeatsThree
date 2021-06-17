@@ -66,6 +66,7 @@ namespace TecH3Projekt.API
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IPictureService, PictureService>();
             services.AddScoped<ITypeService, TypeService>();
+            services.AddScoped<IProductService, ProductService>();
 
 
             /////////////////

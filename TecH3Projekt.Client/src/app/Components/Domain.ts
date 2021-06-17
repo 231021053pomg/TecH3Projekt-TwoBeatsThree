@@ -20,10 +20,10 @@ export interface Category{
 
 export interface Product{
     id: number;
-    ProductName: string;
-    Price: number;
-    Description: string;
+    productName: string;
+    price: number;
+    description: string;
     //Pictures: string;
     //TypeId: number;
-    //Type: string;
+    type: string;
 }
