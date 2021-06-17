@@ -17,3 +17,13 @@ export interface Category{
     id: number;
     typeName: string;
 }
+
+export interface Product{
+    id: number;
+    productName: string;
+    price: number;
+    description: string;
+    //Pictures: string;
+    //TypeId: number;
+    type: string;
+}

@@ -23,6 +23,7 @@ import { ReadOrdersComponent } from './Components/Admin/read-orders/read-orders.
 import { SearchComponent } from './Components/Pages/search/search.component';
 
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CategoryDetailComponent } from './category-detail/category-detail.compo
     CRUDUsersComponent,
     ReadOrdersComponent,
     SearchComponent,
-    CategoryDetailComponent
+    CategoryDetailComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
