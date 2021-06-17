@@ -23,4 +23,9 @@ export class OpretKundeComponent implements OnInit {
   //   .subscribe(login => {this.logins.push(login) });
   // }
 
+  // addUser(firstName: string, lastName: string, address: string, postNr: any, city: string):void{
+  //   this.opretService.addUser({firstName, lastName, address, postNr, city} as User)
+  //   .subscribe(user => {this.users.push(user) });
+  // }
+
 }
