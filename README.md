@@ -2,6 +2,11 @@
 Francis Owen, Matas Motuzas
 
 
+
+# Fredag 18/06/2021
+* 
+
+
 # Torsdag 17/06/21
 We need to concentrate on:
 1. Home page with 3 products from database
@@ -15,7 +20,6 @@ We need to concentrate on:
 * CRUD product needs troubleshooting.
 *  Started work on login and opret kunde client side.
 *  opret kunde has same issue with simultanious LogIn and User creation.
-
 
 
 # Onsdag 16/06/21
