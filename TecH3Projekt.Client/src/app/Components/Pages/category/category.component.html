@@ -4,8 +4,8 @@
 <!--one product card html example
 https://www.w3schools.com/howto/howto_css_product_card.asp -->
 
-<h2>Category 1</h2>
 
+<h2>Category 1</h2>
 
 
 
@@ -17,3 +17,13 @@ https://www.w3schools.com/howto/howto_css_product_card.asp -->
         <a routerLink="/product/{{ product.id }}"><button>Read more</button></a>
     </ng-container>
 </div>
+
+  
+
+<ul *ngFor="let product of products">
+    <li>
+        <h1><a>{{ product.productName }}</a></h1>
+        <p class="price">{{ product.price }}</p>
+        <p><a routerLink="/product/{{ product.id }}">Read more</a></p>
+    </li>
+</ul>
