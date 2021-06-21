@@ -6,6 +6,14 @@ https://www.w3schools.com/howto/howto_css_product_card.asp -->
 
 <h2>Specifick Category Name</h2>
 
+<ul *ngFor="let product of products">
+    <li>
+        <h1><a>{{ product.productName }}</a></h1>
+        <p class="price">{{ product.price }}</p>
+        <p><a routerLink="/product/{{ product.id }}">Read more</a></p>
+    </li>
+  </ul>
+
 <br>
 <div class="card">
     <img src="productPicture.jpg" alt="PictureName" style="width:100%">
