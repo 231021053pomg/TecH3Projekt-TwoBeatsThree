@@ -1,27 +1,13 @@
 
 
-
-
 <!--one product card html example
 https://www.w3schools.com/howto/howto_css_product_card.asp -->
 
-<ul *ngFor="let product of products">
-    <li>
-        <h1><a>{{ product.productName }}</a></h1>
-        <p class="price">{{ product.price }}</p>
-        <p><a routerLink="/product/{{ product.id }}">Read more</a></p>
-    </li>
-  </ul>
 
 <br>
-<div class="card">
-    <!-- *ngFor="let product of products(3); let enProduct=index+1"
-    {{enProduct}} -->
-
-    <!--<img src="productPicture.jpg" alt="PictureName" style="width:100%"> -->
-    <h1>ProductName</h1>
-    <p class="price">€29.99</p>
-    <!-- <p>Some text about the product..</p> -->
-    <p><button><a routerLink="/product"></a>Read more</button></p>
-
+<div class="card" *ngFor="let product of products | slice:0:3">
+    <h1>{{ product.productName }}</h1>
+    <p class="price">{{ product.price }}</p>
+    <!-- <p>{{ product.description }}</p> -->
+    <a routerLink="/product/{{ product.id }}"><button>Read more</button></a>
 </div>

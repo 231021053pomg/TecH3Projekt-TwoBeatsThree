@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../../Domain';
+import { ProductService } from 'src/app/Services/Pages/product.service';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -14,6 +16,7 @@ import { ProductService } from 'src/app/Services/Pages/product.service';
 })
 export class CategoryComponent implements OnInit {
 
+
   type: number = 0;
   products: Product[] = [];
 
@@ -25,7 +28,6 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.type = (this.route.snapshot.paramMap.get('type') || 0) as number;
-
     this.getProducts();
     this.getProductsByType();
 
@@ -34,11 +36,13 @@ export class CategoryComponent implements OnInit {
   getProducts(): void {
     this.productService.getProducts()
     .subscribe(products => this.products = products);
+
   }
 
   getProductsByType(): void{
     this.productService.getProductsByType(this.type)
     .subscribe(products => this.products = products)
+
   }
 
 }
