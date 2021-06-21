@@ -25,9 +25,16 @@ const routes: Routes = [
   {path: 'Update-type/:id', component:CategoryDetailComponent},
   {path: 'Update-product/:id', component:ProductDetailComponent},
 
+  //CATEGORIES TEST ROUTES.
+  { path: 'category/tshirt', component:CategoryComponent},
+  { path: 'category/pants', component:CategoryComponent},
+  { path: 'category/jackets', component:CategoryComponent},
+
+  { path: 'category/:typeName', component:CategoryComponent},
+
   //PAGE Routes.
   { path: 'home', component:HomeComponent},
-  { path: 'category', component:CategoryComponent},// add :id when complete
+  //{ path: 'category', component:CategoryComponent},// add :id when complete/ or type??
   { path: 'search', component:SearchComponent},
   { path: 'login', component:LoginFormComponent},
   { path: 'basket', component:ShoppingBasketComponent},

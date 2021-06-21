@@ -23,6 +23,10 @@ export class ProductService {
     return this.http.get<Product[]>(this.apiUrl);
   }
 
+  getProductsByType(type:any): Observable<Product[]>{
+    return this.http.get<Product[]>(`${this.apiUrl}/${type}`);
+  }
+
   getProduct(id:number): Observable<Product>{
     return this.http.get<Product>(`${this.apiUrl}/${id}`)
     .pipe(catchError(this.handleError<any>("GetOneProduct"))
