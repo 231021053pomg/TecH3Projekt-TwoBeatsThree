@@ -22,8 +22,8 @@ namespace TecH3Projekt.API.Services
         // GET ALL PRODUCT
         public async Task<List<Product>> GetAllProducts()
         {
-            var product = await _productRepository.GetAll();
-            return product;
+            var products = await _productRepository.GetAll();
+            return products;
         }
 
 

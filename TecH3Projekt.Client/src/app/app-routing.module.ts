@@ -27,14 +27,14 @@ const routes: Routes = [
 
   //PAGE Routes.
   { path: 'home', component:HomeComponent},
-  { path: 'category', component:CategoryComponent},
+  { path: 'category', component:CategoryComponent},// add :id when complete
   { path: 'search', component:SearchComponent},
   { path: 'login', component:LoginFormComponent},
   { path: 'basket', component:ShoppingBasketComponent},
   
   //EXTRA Routes.
   {path: 'opretKunde', component:OpretKundeComponent},//
-  {path: 'product', component:ProductComponent},//
+  {path: 'product/:id', component:ProductComponent},//
 
   //ADMIN Routes.
   {path: 'CRUD-types', component:CRUDTypeComponent},

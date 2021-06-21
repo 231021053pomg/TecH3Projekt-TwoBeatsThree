@@ -16,7 +16,7 @@ export class ProductDetailComponent implements OnInit {
   description = "";
   type = "";
   
-  product: Product = { productName: "", price: 0, description: "", type: "", id: 0 };
+  product: Product = { productName: "", price: 0, description: "", typeID: 0, id: 0 };
   message: string = "";
 
   constructor(
