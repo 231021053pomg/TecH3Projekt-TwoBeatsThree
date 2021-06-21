@@ -27,8 +27,8 @@ export class CRUDProductComponent implements OnInit {
   }
 
 
-  add(productName: string, price: any, description: any, type: any):void{
-    this.productService.addProduct({productName, price, description, type} as Product)
+  add(productName: string, price: any, description: string, typeID: any):void{
+    this.productService.addProduct({ productName, price, description, typeID} as Product)
     .subscribe(product => {this.products.push(product) });
   }
 

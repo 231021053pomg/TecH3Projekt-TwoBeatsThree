@@ -13,7 +13,7 @@ export class UsersService {
   apiUrl: string = "https://localhost:5001/api/user";//HOW TO RESOLVE???
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type' : 'application/json' })
+    headers: new HttpHeaders({ 'Content-User' : 'application/json' })
   };
 
   constructor(

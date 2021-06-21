@@ -31,7 +31,6 @@ export class ProductService {
 
 
   addProduct(product: Product): Observable<Product> {
-
     return this.http.post<Product>(this.apiUrl, product, this.httpOptions)
     .pipe(catchError(this.handleError<Product>("AddProduct"))
     );

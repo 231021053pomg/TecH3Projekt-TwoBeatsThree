@@ -5,6 +5,13 @@
 <!--one product card html example
 https://www.w3schools.com/howto/howto_css_product_card.asp -->
 
+<ul *ngFor="let product of products">
+    <li>
+        <h1><a>{{ product.productName }}</a></h1>
+        <p class="price">{{ product.price }}</p>
+        <p><a routerLink="/product/{{ product.id }}">Read more</a></p>
+    </li>
+  </ul>
 
 <br>
 <div class="card">
@@ -15,6 +22,6 @@ https://www.w3schools.com/howto/howto_css_product_card.asp -->
     <h1>ProductName</h1>
     <p class="price">€29.99</p>
     <!-- <p>Some text about the product..</p> -->
-    <p><button>Read more</button></p>
+    <p><button><a routerLink="/product"></a>Read more</button></p>
 
 </div>

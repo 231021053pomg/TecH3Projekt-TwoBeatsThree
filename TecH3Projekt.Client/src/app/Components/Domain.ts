@@ -28,6 +28,7 @@ export interface Product{
     price: number;
     description: string;
     //Pictures: string;
-    //TypeId: number;
-    type: string;
+    typeID: number;
+    type?: any;
+    
 }
