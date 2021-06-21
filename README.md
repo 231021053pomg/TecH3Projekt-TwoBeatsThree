@@ -2,6 +2,10 @@
 Francis Owen, Matas Motuzas
 
 
+# Mandag 21/06/2021
+* Home page complete.
+* 
+
 
 # Fredag 18/06/2021
 * 
