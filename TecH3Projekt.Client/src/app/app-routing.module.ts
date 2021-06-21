@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CRUDProductComponent } from './Components/Admin/crudproduct/crudproduct.component';//
 import { CRUDTypeComponent } from './Components/Admin/crudtype/crudtype.component';//
 import { CRUDUsersComponent } from './Components/Admin/crudusers/crudusers.component';
@@ -16,12 +17,13 @@ import { ShoppingBasketComponent } from './Components/Pages/shopping-basket/shop
 import { UsersComponent } from './Components/users/users.component';//
 
 const routes: Routes = [
-  { path: '', redirectTo: '/users', pathMatch:'full'}, //Start at Home page.
+  { path: '', redirectTo: '/home', pathMatch:'full'}, //Start at Home page.
   
   { path: 'users', component:UsersComponent}, //USE for testing
 
   //Detail route
   {path: 'Update-type/:id', component:CategoryDetailComponent},
+  {path: 'Update-product/:id', component:ProductDetailComponent},
 
   //PAGE Routes.
   { path: 'home', component:HomeComponent},
