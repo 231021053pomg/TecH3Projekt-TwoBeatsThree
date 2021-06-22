@@ -2,6 +2,17 @@
 
 <H2>YOUR SHOPPING BASKET</H2>
 
+<div *ngIf="cartItem.length == 0" class="alert alert-info">No items in cart.</div>
+
+<ul *ngIf= "cartItem.length > 0">
+  <li *ngFor ="let item of cartItem">
+      <!-- <span>{{ cartItems.productName }}</span>
+      <span>{{ cartItems.qty }}</span>
+      <span>{{ cartItems.qty * cartItems.price }}</span> -->
+  </li>
+  <a>Total:</a> {{ cartTotal }}
+</ul>
+
 <div class="col-25">
     <div class="container">
       <h4>Cart

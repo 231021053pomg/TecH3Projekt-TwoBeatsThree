@@ -10,4 +10,5 @@ https://www.w3schools.com/howto/howto_css_product_card.asp -->
     <p class="price">{{ product.price }}</p>
     <!-- <p>{{ product.description }}</p> -->
     <a routerLink="/product/{{ product.id }}"><button>Read more</button></a>
+    <button (click)= "addToCart()"> Add to cart</button>
 </div>

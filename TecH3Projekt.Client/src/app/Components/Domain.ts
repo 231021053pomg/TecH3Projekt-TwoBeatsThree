@@ -2,7 +2,7 @@ export interface LogIn{
     id: number;
     email: string;
     password: string;
-    //isAdmin: boolean;
+    isAdmin: boolean;
     user?: Array<User>;
 }
 

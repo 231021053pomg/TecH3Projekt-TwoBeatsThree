@@ -10,10 +10,10 @@ https://www.w3schools.com/howto/howto_css_product_card.asp -->
 
 
 <div class="card" *ngFor="let product of products">
-    <ng-container *ngIf="product.typeID == 1">
+    <ng-container *ngIf="product.typeID == 2">
         <h1>{{ product.productName }}</h1>
         <p class="price">{{ product.price }}</p>
-        <!-- <p>{{ product.description }}</p> -->
+        <p>{{ product.description }}</p>
         <a routerLink="/product/{{ product.id }}"><button>Read more</button></a>
     </ng-container>
 </div>

@@ -18,7 +18,7 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private route:ActivatedRoute,
-    private productService:ProductService,
+    private productService:ProductService, //DI
     private location:Location //ADDED for service
   ) { }
 
