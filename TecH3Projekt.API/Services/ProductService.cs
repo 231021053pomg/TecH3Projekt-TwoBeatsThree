@@ -57,5 +57,12 @@ namespace TecH3Projekt.API.Services
             var product = await _productRepository.Delete(id);
             return product;
         }
+
+        //GET PRODUCT BY TYPE
+        public async Task<List<Product>> GetProductByType(int id)
+        {
+            var products = await _productRepository.GetByType(id);
+            return products;
+        }
     }
 }

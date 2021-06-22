@@ -13,5 +13,6 @@ namespace TecH3Projekt.API.Services
         Task<Product> Create(Product product);
         Task<Product> Update(int id, Product product);
         Task<Product> Delete(int id);
+        Task<List<Product>> GetProductByType(int id);
     }
 }
