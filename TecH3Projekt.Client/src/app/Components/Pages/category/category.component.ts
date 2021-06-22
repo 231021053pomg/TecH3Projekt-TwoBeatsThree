@@ -5,9 +5,6 @@ import { ProductService } from 'src/app/Services/Pages/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Product } from '../../Domain';
-import { ProductService } from 'src/app/Services/Pages/product.service';
-
 
 @Component({
   selector: 'app-category',
