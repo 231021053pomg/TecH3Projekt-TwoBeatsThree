@@ -22,5 +22,6 @@ namespace TecH3Projekt.API.Repositories
 
         //Delete Product
         Task<Product> Delete(int id);
+        Task<List<Product>> GetByType(int id);
     }
 }

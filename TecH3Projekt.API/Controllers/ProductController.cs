@@ -57,6 +57,22 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
+        //EXAMPLE: https://localhost:5001/api/product/typeID //Extra Id used to specify object for DELETE, PUT(update), or GetById/ GetByType.
+        [HttpGet("Category/{id}")]//GetByType
+        public async Task<IActionResult> GetByType([FromRoute] int id)
+        {
+            try
+            {
+                var products = await _productService.GetProductByType(id);
+                
+                return Ok(products);
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
+        }
+
         //EXAMPLE: https://localhost:5001/api/product
         [HttpPost]
         public async Task<IActionResult> Create(Product product)

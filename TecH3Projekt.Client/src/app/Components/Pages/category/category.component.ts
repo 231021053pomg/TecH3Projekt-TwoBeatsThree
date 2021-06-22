@@ -14,7 +14,7 @@ import { Location } from '@angular/common';
 export class CategoryComponent implements OnInit {
 
 
-  type: number = 0;
+  typeId: number = 0;
   products: Product[] = [];
 
   constructor(
@@ -24,7 +24,7 @@ export class CategoryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.type = (this.route.snapshot.paramMap.get('type') || 0) as number;
+    this.typeId = (this.route.snapshot.paramMap.get('typeId') || 0) as number;
     this.getProducts();
     this.getProductsByType();
 
@@ -37,7 +37,7 @@ export class CategoryComponent implements OnInit {
   }
 
   getProductsByType(): void{
-    this.productService.getProductsByType(this.type)
+    this.productService.getProductsByType(this.typeId)
     .subscribe(products => this.products = products)
 
   }

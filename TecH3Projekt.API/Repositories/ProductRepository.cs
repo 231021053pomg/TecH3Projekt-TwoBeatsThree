@@ -37,6 +37,16 @@ namespace TecH3Projekt.API.Repositories
                .FirstOrDefaultAsync(a => a.Id == id);
         }
 
+        //GETBYTYPE
+        public async Task<List<Product>> GetByType(int id)
+        {
+            return await _context.Product
+                .Where(a => a.DeletedAt == null)
+                .Where(a => a.TypeId == id)
+                //.Include(a => a.Type)
+                .ToListAsync();
+        }
+
         //CREATE
         public async Task<Product> Create(Product product)
         {
