@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'Update-product/:id', component:ProductDetailComponent},
 
   //CATEGORIES TEST ROUTES.
-  { path: 'category/:typeName', component:CategoryComponent},
+  { path: 'category/:', component:CategoryComponent},
 
   //PAGE Routes.
   { path: 'home', component:HomeComponent},
