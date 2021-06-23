@@ -13,23 +13,26 @@ namespace TecH3Projekt.Tests.TestRepos
 {
     public class ProductRepositoryTests
     {
-        private DbContextOptions<TecH3ProjectDbContext> _options;
-        private readonly TecH3ProjectDbContext _context;
+        private readonly DbContextOptions<TecH3ProjectDbContext> _options; //vores database type er TecH3ProjectDbContext
+        private readonly TecH3ProjectDbContext _context; 
 
 
 
-        //<<<<<<<<<<<<<<<<<<<<<<< ADD 3 Products
-        public ProductRepositoryTests()
+
+        //<<<<<<<<<<<<<<<<<<<<<<< ADD 3 Products and 1 Type
+        public ProductRepositoryTests()  //constructor fordi der skal laves flere methoder
         {
 
-            _options = new DbContextOptionsBuilder<TecH3ProjectDbContext>()
+            _options = new DbContextOptionsBuilder<TecH3ProjectDbContext>() //options variabel  indholder det hvad der skal bruges til at
+                                                                            //simulere et database
                 .UseInMemoryDatabase(databaseName: "TecH3ProjectDatabase")
                 .Options;
 
             _context = new TecH3ProjectDbContext(_options);
 
+            _context.Database.EnsureDeleted(); //esnuers that database is deleted because we need empty database
 
-            _context.Database.EnsureDeleted();
+
 
             //PRODUCTS
             _context.Product.Add(new Product
@@ -59,7 +62,7 @@ namespace TecH3Projekt.Tests.TestRepos
                 Description = "White tshirt"
             });
 
-            _context.SaveChanges();
+            _context.SaveChanges();    //saves changes
 
 
 
@@ -70,7 +73,7 @@ namespace TecH3Projekt.Tests.TestRepos
                 TypeName = "Tshirt"
             }) ;
 
-            _context.SaveChanges();
+            _context.SaveChanges();   //saves changes
         }
 
 
@@ -80,13 +83,14 @@ namespace TecH3Projekt.Tests.TestRepos
         public async Task GetAllProducts_ShouldReturnAllProduct_WhenProductsExists()
         {
             // Arrange
-            ProductRepository productRepository = new ProductRepository(_context);
+            ProductRepository productRepository = new ProductRepository(_context); //data
 
             // Act
-            var product = await productRepository.GetAll();
+            var product = await productRepository.GetAll();  //hvad der gøres med data
 
             // Assert
-            Assert.Equal(3, product.Count);
+            Assert.Equal(3, product.Count); //bekræfte at det virker
+                                            //Here kigger den om der er 3 producter
         }
 
 
@@ -137,9 +141,9 @@ namespace TecH3Projekt.Tests.TestRepos
 
 
             //Assert
-            Assert.NotNull(products);
-            Assert.NotEqual(DateTime.MinValue, products.CreatedAt);
-            Assert.Equal(productss.Count + 1, products.Id);
+            Assert.NotNull(products); //bekrafte at den er ikke null
+            Assert.NotEqual(DateTime.MinValue, products.CreatedAt); //cheker om den er alt andet end default dato
+            Assert.Equal(productss.Count + 1, products.Id); 
         }
 
 

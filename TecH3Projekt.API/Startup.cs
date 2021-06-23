@@ -55,7 +55,7 @@ namespace TecH3Projekt.API
             services.AddScoped<ILogInRepository, LogInRepository>();
             services.AddScoped<IUserRepository, UserRepository>();//
             services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IProductRepository, ProductRepository>();//
+            services.AddScoped<IProductRepository, ProductRepository>();// <------------
             services.AddScoped<IPictureRepository, PictureRepository>();//
             services.AddScoped<ITypeRepository, TypeRepository>();//
 
@@ -66,7 +66,7 @@ namespace TecH3Projekt.API
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IPictureService, PictureService>();
             services.AddScoped<ITypeService, TypeService>();
-            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductService, ProductService>();// <------------
 
 
             /////////////////

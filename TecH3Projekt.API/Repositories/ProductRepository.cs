@@ -10,21 +10,24 @@ namespace TecH3Projekt.API.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly TecH3ProjectDbContext _context;
+        private readonly TecH3ProjectDbContext _context;  
 
-        public ProductRepository(TecH3ProjectDbContext context)
+        public ProductRepository(TecH3ProjectDbContext context) //constructor som returner vores DbContext 
         {
             _context = context;//connect readonly and instance context.
         }
+
+
+
 
         //GETALL
         public async Task<List<Product>> GetAll()//async tasks don't stop other tasks from running.
         {
             //await will return data when completed.
             return await _context.Product
-               .Where(a => a.DeletedAt == null)//Sort out Deleted Products.
+               .Where(a => a.DeletedAt == null) //Sort out Deleted Products.
                //.Include(a => a.Pictures)//1-to-M relations? what about 1-to-1 like type?
-               .Include(a => a.Type)
+               .Include(a => a.Type) //Includes type
                .ToListAsync();
         }
 
@@ -37,6 +40,10 @@ namespace TecH3Projekt.API.Repositories
                .FirstOrDefaultAsync(a => a.Id == id);
         }
 
+
+
+
+
         //GETBYTYPE
         public async Task<List<Product>> GetByType(int id)
         {
@@ -47,26 +54,29 @@ namespace TecH3Projekt.API.Repositories
                 .ToListAsync();
         }
 
+
+
+
+
         //CREATE
         public async Task<Product> Create(Product product)
         {
-            product.CreatedAt = DateTime.Now;
-            _context.Product.Add(product);
-            await _context.SaveChangesAsync();
+            product.CreatedAt = DateTime.Now; //setter created at dato
+            _context.Product.Add(product);   //tilføjer product
+            await _context.SaveChangesAsync();  //afventer save changes
             return product;
         }
 
         //UPDATE
         public async Task<Product> Update(int id, Product product)
         {
-            var editProduct = await _context.Product.FirstOrDefaultAsync(a => a.Id == id);
-            if (editProduct != null)
+            var editProduct = await _context.Product.FirstOrDefaultAsync(a => a.Id == id); //findes der product med indskrevet id?
+            if (editProduct != null) //checker hvis product findes opdateres der UpdatedAt dato for specific id
+                                     //og så bliver opdateret og gemt.
             {
-                // tilføj rettelses tiden til elementet, så vi kan tracke seneste ændring
-
                 editProduct.UpdatedAt = DateTime.Now;
-
-
+                //Hvilket ting der skal opdateres eksempel:
+                //editProduct.ProductName = product.ProductName;
                 _context.Product.Update(editProduct);
                 await _context.SaveChangesAsync();
             }
@@ -76,8 +86,8 @@ namespace TecH3Projekt.API.Repositories
         //DELETE
         public async Task<Product> Delete(int id)
         {
-            var product = await _context.Product.FirstOrDefaultAsync(a => a.Id == id);
-            if (product != null)
+            var product = await _context.Product.FirstOrDefaultAsync(a => a.Id == id);  //findes der product med indskrevet id?
+            if (product != null)  //hvis der productet findes oprettes der DeletedAt dato og gemmes.
             {
                 product.DeletedAt = DateTime.Now;
                 await _context.SaveChangesAsync();

@@ -8,6 +8,8 @@ namespace TecH3Projekt.API.Services
 {
     public interface IProductService
     {
+        //Næsten det sammen som Repository interface
+
         Task<List<Product>> GetAllProducts();
         Task<Product> GetProductById(int id);
         Task<Product> Create(Product product);
