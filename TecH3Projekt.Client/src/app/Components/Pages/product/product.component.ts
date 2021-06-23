@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.id = (this.route.snapshot.paramMap.get('id') || 0) as number;
     
-    //RETURN to CRUD-types if data incorrect.
+    //RETURN to home if data incorrect.
     if(this.id == null || this.id == 0){
       this.location.go('/home');//url of home page.
     }

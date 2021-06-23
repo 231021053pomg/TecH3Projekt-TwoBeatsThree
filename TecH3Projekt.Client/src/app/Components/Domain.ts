@@ -2,8 +2,8 @@ export interface LogIn{
     id: number;
     email: string;
     password: string;
-    isAdmin: boolean;
-    user?: Array<User>;
+    //isAdmin: boolean;
+    userID: number;
 }
 
 export interface User{
