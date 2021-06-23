@@ -8,7 +8,7 @@
 
     <label for="nProductPrice">Price:</label>
     <br>
-    <input id="nProductPrice" #nProductPrice>
+    <input type="number" id="nProductPrice" #nProductPrice>
     <br>
 
     <label for="nProductDescription">Description:</label>
@@ -70,46 +70,9 @@
     <td><a>{{ product.price }}</a></td>
     <td><a>{{ product.description }}</a></td>
     <td>
-      <a>{{ product.type?.typeName }}</a>
+      <a>{{ product.type.typeName }}</a>
       <a (click)="delete(product)">[X]</a>
     </td>
   </tr>
 </table>
 <hr>
-
-
-<!-- Update  -->
-<h2> Update existing product </h2>
-<form>
-    <label for="uProductName">Product Name:</label>
-    <br>
-    <input type="text" id="uProductName" name="uProductName">
-    <br>
-    <label for="uProductPrice">Price:</label>
-    <br>
-    <input type="text" id="uProductPrice" name="uProductPrice">
-    <br>
-    <label for="uProductDescription">Description:</label>
-    <br>
-    <input type="text" id="uProductDescription" name="uProductDescription">
-    <br>
-    <label for="uProductPictures">Pictures:</label>
-    <br>
-    <input type="text" id="uProductPictures" name="uProductPictures">
-    <br>
-    <button type="button" id="updateProduct" >Update</button>
-    <br>
-</form>
-<hr>
-
-
-<!-- Delete  -->
-<h2> Delete existing product by ID </h2>
-<form>
-    <label for="dProductById">The ID of existing product:</label>
-    <br>
-    <input type="text" id="dProductById" name="dProductById">
-    <br>
-    <button type="button" id="deleteProduct" >Delete</button>
-    <br>
-</form>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/Services/Pages/category.service';
+import { Category } from '../../Domain';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  categories: Category[] = [];
+
+  constructor(
+    private categoryService:CategoryService
+  ) { }
 
   ngOnInit(): void {
+    this.getCategories();
+  }
+
+  getCategories(): void {
+    this.categoryService.getCategories()
+    .subscribe(categories => this.categories = categories);
   }
 
 }
