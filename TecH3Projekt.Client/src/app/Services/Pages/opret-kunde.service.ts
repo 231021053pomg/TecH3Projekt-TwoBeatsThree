@@ -11,24 +11,19 @@ import { User } from 'src/app/Components/Domain';
   providedIn: 'root'
 })
 export class OpretKundeService {
-  apiUrl: string = "https://localhost:5001/api/login";//CONFIRM??
+  apiUrl: string = "https://localhost:5001/api/logIn";
 
   httpOptions = {
-    Headers: new HttpHeaders({ 'Content-Type' : 'application/json'})
+    Headers: new HttpHeaders({ 'Content-Opret' : 'application/json'})
   };
 
   constructor(
     private http:HttpClient
   ) { }
 
-  // addLogin(login: LogIn): Observable<LogIn> {
+  // addLogIn(login: LogIn): Observable<LogIn> {
   //   return this.http.post<LogIn>(this.apiUrl, login, this.httpOptions)
   //   .pipe(catchError(this.handleError<any>('addLogin')));
-  // }
-
-  // AddUser(user: User): Observable<User>{
-  //   return this.http.post<User>(this.apiUrl, user, this.httpOptions)
-  //   .pipe(catchError(this.handleError<any>('addUser')))
   // }
 
    /**

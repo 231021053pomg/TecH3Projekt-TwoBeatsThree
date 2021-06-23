@@ -27,7 +27,7 @@ const routes: Routes = [
 
   //CATEGORIES TEST ROUTES.
 
-  { path: 'category/:typeID', component:CategoryComponent},
+  { path: 'category/:id', component:CategoryComponent},
 
 
   //PAGE Routes.

@@ -18,7 +18,16 @@
 
     <label for="nProductType">Type:</label>
     <br>
-    <input type="number" id="nProductType" #nProductType>
+    <!-- <input type="number" id="nProductType" #nProductType> -->
+    
+    <div >
+      <select id="nProductType" #nProductType>
+        <option *ngFor="let category of categories" [value]="category.id">
+          {{category.typeName}}
+        </option>
+      </select>
+    </div>
+    
     <br>
 
     <!-- <label for="nProductPictures">Pictures:</label>
@@ -45,12 +54,12 @@
 
 <!-- Read  -->
 <!-- //TEST LIST OF ALL TYPES. -->
-<ul *ngFor="let product of products">
+<!-- <ul *ngFor="let product of products">
   <li>
     <a routerLink="/Update-product/{{ product.id }}">{{ product.productName }}</a>
     <a (click)="delete(product)">[X]</a>
   </li>
-</ul>
+</ul> -->
 
 
 <h2> Read Table of all products </h2>

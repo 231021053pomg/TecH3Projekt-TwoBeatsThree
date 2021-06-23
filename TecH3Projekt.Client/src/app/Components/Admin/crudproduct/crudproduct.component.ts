@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../Domain';
+import { Category, Product } from '../../Domain';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from 'src/app/Services/Pages/product.service';
+import { throwError } from 'rxjs';
+import { CategoryService } from 'src/app/Services/Pages/category.service';
 
 @Component({
   selector: 'app-crudproduct',
@@ -10,20 +13,28 @@ import { ProductService } from 'src/app/Services/Pages/product.service';
 export class CRUDProductComponent implements OnInit {
 
   products: Product[] = [];
+  categories: Category[] = [];
 
   constructor(
-    private productService:ProductService //ADDED for service
+    private productService:ProductService, //ADDED for service
+    private categoryService:CategoryService
   ) { }
 
   ngOnInit(): void {
 
     this.getProducts();
+    this.getCategories();
 
   }
 
   getProducts(): void {
     this.productService.getProducts()
     .subscribe(products => this.products = products);
+  }
+
+  getCategories(): void {
+    this.categoryService.getCategories()
+    .subscribe(categories => this.categories = categories);
   }
 
 
