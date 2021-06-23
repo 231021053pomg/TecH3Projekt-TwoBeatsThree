@@ -1,0 +1,61 @@
+
+
+1. Man laver et klasse med datatyper som liger i eksempelvis "Domain" mappe.
+   Der skal laves et klasse til hvert tabel der skal oprettes.
+
+2. Inde i "Repository" mappe laves INTERFACE REPOSITORY med crud methoder af hvert klasse i domain.
+
+3. Der oprettes et REPOSITORY klasse som bruger interface til at oprette klasser.
+   De har alt kode hvad methoder i interface skal gøre
+
+4. inde i Database mappe oprettes et eksempelvis TecH3ProjectDbContext klasse som bruges til
+   at oprette tabeler i databasen med EFCore. Der laves også et empty concstructor (ctor)
+
+5. Inde i Startup.cs filen skal der injectes vores DbContext i vores program.
+   Inde i ConfigureService method skrives:
+   services.AddDbContext<TecH3ProjectDbContext>(//
+                options => options.UseSqlServer(Configuration.GetConnectionString("MyConnectionString"))
+                );
+
+   Der bliver valt hvilket type database der skal bruges og hvor ligger connection string med navnet.
+
+6. Inde i appsettings.Development.json skal der tilføjes:
+   "ConnectionStrings": {
+    "MyConnectionString": "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = TecH3ProjectDatabase"
+    }
+
+    Der laves et lokalt database. MSSQLLocalDB er vores server. TecH3ProjectDatabase er navnet på databasen.
+    2 // fordi der skal skabes et /.
+
+7.  Går tilbage til Startup.cs og opret overloaded constructor hvor der kastes options:
+    public TecH3ProjectDbContext(DbContextOptions<TecH3ProjectDbContext> options) : base(options) { }
+
+8. Inde i Package Manager Console skal der skrives> add-migration *navn på migration*
+   Efter det skal der skrives> update-databse     (Den laver databsen)
+
+9. Inde i REPOSITORY INTERFACE tilføjes der:
+   private readonly TecH3ProjectDbContext _context;  
+
+   public ProductRepository(TecH3ProjectDbContext context) 
+   {
+       _context = context;
+   }
+
+10. Inde i Starup.cs i ConfigureServices method skal der tilføjes (eksempel):
+    services.AddScoped<IProductRepository, ProductRepository>();
+
+11. Inde i eksempelvvis productRepository tilføjes:
+    public async Task<List<Product>> GetAll()
+        {
+            return await _context.Product
+               .Where(a => a.DeletedAt == null) 
+               .Include(a => a.Type)
+               .ToListAsync();
+        }
+
+
+12. Der laves et Xunit Test Project hvor der skal testes CRUD. Reference Manager tilføjes vores API.
+
+13. 
+    
+
