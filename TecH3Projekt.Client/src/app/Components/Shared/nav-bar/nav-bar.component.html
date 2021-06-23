@@ -7,11 +7,11 @@
   <a href="home">Home</a>
   <div class="subnav">
     <button class="subnavbtn">Categories <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a href="category/tshirts">T-shirts</a>
-      <a href="category/pants">Pants</a>
-      <a href="category/jackets">Jackets</a>
+    
+    <div class="subnav-content" *ngFor="let category of categories">
+      <a href="category/{{ category.id }}">{{category.typeName}}</a>
     </div>
+
   </div>
   <a href="search">Search</a>
   <a href="login">Login</a>
@@ -27,12 +27,12 @@
     </div>
   </div>
 
-  <div class="subnav">
+  <!-- <div class="subnav">
     <button class="subnavbtn">Extra <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
       <a href="opretKunde">Opret Kunde</a>
       <a href="product">Product</a>
     </div>
-  </div>
+  </div> -->
 
 </div>
