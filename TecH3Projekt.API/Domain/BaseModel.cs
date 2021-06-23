@@ -10,10 +10,10 @@ namespace TecH3Projekt.API.Domain
 {
     public class BaseModel
     {
-        [Key]
-        public int Id { get; set; }
+        [Key]  //Key because its ID
+        public int Id { get; set; } 
 
-        [JsonIgnore]//can't be sent to client.
+        [JsonIgnore]  //can't be sent to client.
         public DateTime CreatedAt { get; set; }
 
         [JsonIgnore]

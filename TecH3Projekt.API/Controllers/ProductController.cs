@@ -13,22 +13,26 @@ namespace TecH3Projekt.API.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        //inject service into controller.
-        private readonly IProductService _productService;
-
+      
+        private readonly IProductService _productService; //inject service into controller.
         //ctor gets IProductService, which allows for use of classes with IProductService implemented.
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService) //
         {
-            _productService = productService;// connect readonly
+            _productService = productService; //connect readonly
         }
 
+
+
+
+
+
         //EXAMPLE: https://localhost:5001/api/product
-        [HttpGet]//ALL
+        [HttpGet]//getALL
         public async Task<IActionResult> GetAll()
         {
             try
             {
-                var products = await _productService.GetAllProducts();
+                var products = await _productService.GetAllProducts(); //fra product service
                 //throw new Exception("Planned fail...");//Used to fail Tests
                 return Ok(products);
             }
@@ -74,13 +78,13 @@ namespace TecH3Projekt.API.Controllers
         }
 
         //EXAMPLE: https://localhost:5001/api/product
-        [HttpPost]
+        [HttpPost] //Create
         public async Task<IActionResult> Create(Product product)
         {
             try
             {
                 var newProduct = await _productService.Create(product);
-                if(newProduct == null)
+                if(newProduct == null) //hvis den ny product ikke findes returner den et messege med product error
                 {
                     return BadRequest("Product ERROR..");
                 }
@@ -93,7 +97,7 @@ namespace TecH3Projekt.API.Controllers
         }
 
         //EXAMPLE: https://localhost:5001/api/product/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
-        [HttpPut("{id}")]
+        [HttpPut("{id}")] //Update
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Product product)
         {
             try
@@ -112,7 +116,7 @@ namespace TecH3Projekt.API.Controllers
         }
 
         //EXAMPLE: https://localhost:5001/api/login/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}")] //Delete
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             try

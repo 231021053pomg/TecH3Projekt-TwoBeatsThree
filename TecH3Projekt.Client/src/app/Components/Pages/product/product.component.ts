@@ -14,7 +14,10 @@ import { ProductService } from 'src/app/Services/Pages/product.service';//
 export class ProductComponent implements OnInit {
 
   id: number = 0;
+
+  //bruges bagefter i html delen
   product: Product = {id: 0, productName: "", price: 0, description: "", typeID: 0 };
+
 
   constructor(
     private route:ActivatedRoute,

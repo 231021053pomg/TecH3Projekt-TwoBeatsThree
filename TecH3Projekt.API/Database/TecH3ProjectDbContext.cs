@@ -7,11 +7,14 @@ using TecH3Projekt.API.Domain;//
 
 namespace TecH3Projekt.API.Database
 {
-    public class TecH3ProjectDbContext : DbContext//comes from EFCore.
+    public class TecH3ProjectDbContext : DbContext //comes from EFCore.
     {
-        public TecH3ProjectDbContext() { }//empty ctor.
+        public TecH3ProjectDbContext() { }  //empty constructor (ctor)
         public TecH3ProjectDbContext(DbContextOptions<TecH3ProjectDbContext> options) : base(options) { }//
 
+
+
+        //Tabeler som EFCore skal generer 
 
         public DbSet<LogIn> LogIn { get; set; }
         public DbSet<User> User { get; set; }

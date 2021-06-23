@@ -9,9 +9,10 @@ namespace TecH3Projekt.API.Services
 {
     public class ProductService : IProductService
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IProductRepository _productRepository; //Service skal hente data fra IProductRepository
+                                                                //dependency injection
 
-        public ProductService(IProductRepository productRepository)
+        public ProductService(IProductRepository productRepository) 
         {
             _productRepository = productRepository;
         }

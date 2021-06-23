@@ -13,7 +13,7 @@ namespace TecH3Projekt.Tests.TestService
 {
     public class LogInServiceTests
     {
-        private readonly LogInService _sut;
+        private readonly LogInService _sut;   // sut - system under test
         private readonly Mock<ILogInRepository> _logInRepositoryMock = new();
 
         public LogInServiceTests()

@@ -17,6 +17,7 @@ import { ShoppingBasketComponent } from './Components/Pages/shopping-basket/shop
 import { UsersComponent } from './Components/users/users.component';//
 
 const routes: Routes = [
+  
   { path: '', redirectTo: '/home', pathMatch:'full'}, //Start at Home page.
   
   { path: 'users', component:UsersComponent}, //USE for testing
