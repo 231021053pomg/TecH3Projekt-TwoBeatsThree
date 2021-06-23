@@ -1,0 +1,32 @@
+<H2>YOUR SHOPPING BASKET</H2>
+
+
+
+<div *ngIf="cartItem.length == 0" class="alert alert-info">No items in cart.</div>
+
+<ul *ngIf= "cartItem.length > 0">
+  <li *ngFor ="let item of cartItem">
+      <span>{{ cartItems.productName }}</span>
+      <span>{{ cartItems.qty }}</span>
+      <span>{{ cartItems.qty * cartItems.price }}</span>
+  </li>
+  <a>Total:</a> {{ cartTotal }}
+</ul>
+
+
+<!-- <div class="col-25">
+    <div class="container">
+      <h4>Cart
+        <span class="price" style="color:black">
+          <i class="fa fa-shopping-cart"></i>
+          <b>4</b>
+        </span>
+      </h4>
+      <p><a href="http://localhost:4200/product">Link to Product</a> <span class="price">  €15</span></p>
+      <p><a href="http://localhost:4200/product">Link to Product</a> <span class="price">  €5</span></p>
+      <p><a href="http://localhost:4200/product">Link to Product</a> <span class="price">  €8</span></p>
+      <p><a href="http://localhost:4200/product">Link to Product</a> <span class="price">  €2</span></p>
+      <hr>
+      <p>Total price or the order    <span class="price" style="color:black"><b>€30</b></span></p>
+    </div>
+</div> -->

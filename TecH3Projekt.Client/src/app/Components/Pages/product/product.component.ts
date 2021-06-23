@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { Product } from '../../Domain';
 import { ProductService } from 'src/app/Services/Pages/product.service';//
+import { MessengerService } from 'src/app/Services/Pages/messenger.service';
 
 
 @Component({
@@ -19,7 +20,9 @@ export class ProductComponent implements OnInit {
   constructor(
     private route:ActivatedRoute,
     private productService:ProductService, //DI //ADDED for service
-    private location:Location 
+    private location:Location,
+
+    private messengerService: MessengerService
   ) { }
 
 
@@ -41,6 +44,11 @@ export class ProductComponent implements OnInit {
     this.productService.getProduct(this.id)
     .subscribe(product => (product != null ? this.product = product : this.location.go('/home')) 
     )
+  }
+
+
+  handleAddtoCart() {
+    this.messengerService.sendMsg(this.product)
   }
 
 }
