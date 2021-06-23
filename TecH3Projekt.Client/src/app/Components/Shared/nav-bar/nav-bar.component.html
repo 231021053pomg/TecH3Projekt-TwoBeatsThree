@@ -9,7 +9,7 @@
     <button class="subnavbtn">Categories <i class="fa fa-caret-down"></i></button>
     
     <div class="subnav-content" *ngFor="let category of categories">
-      <a routerLink="category/{{ category.id }}">{{category.typeName}}</a>
+      <a href="category/{{ category.id }}">{{category.typeName}}</a>
     </div>
 
   </div>
