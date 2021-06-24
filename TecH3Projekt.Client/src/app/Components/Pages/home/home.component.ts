@@ -12,31 +12,22 @@ import { CartService } from 'src/app/Services/Pages/cart.service';
 })
 export class HomeComponent implements OnInit {
 
-  products: Product[] = [];
+  products: Product[] = []; //--------------------
   
 
   constructor(
-    private productService:ProductService, //ADDED for service
-    private cartService: CartService
+    private productService:ProductService, //ADDED for service  //--------------------
+
   ) { }
 
-  ngOnInit(): void {
-
-    this.getProducts();
-
+  ngOnInit(): void { //--------------------
+    this.getProducts(); //--------------------
   }
 
 
 
-  getProducts(): void {
-    this.productService.getProducts()
-    .subscribe(products => this.products = products);
-  }
-
-
-
-  
-  addToCart(){
-    this.cartService.sendToCart(this.products)
+  getProducts(): void { //--------------------
+    this.productService.getProducts() //--------------------
+    .subscribe(products => this.products = products); //--------------------
   }
 }

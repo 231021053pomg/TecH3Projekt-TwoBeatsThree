@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TecH3Projekt.API.Domain
 {
-    public class Type : BaseModel
+    public class Type : BaseModel  //---------------------
     {
        [Required]
-        public string TypeName { get; set; }
+        public string TypeName { get; set; }    //---------------------
     }
 }

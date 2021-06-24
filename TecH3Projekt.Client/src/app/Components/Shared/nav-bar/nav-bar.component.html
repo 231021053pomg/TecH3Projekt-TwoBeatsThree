@@ -4,17 +4,17 @@
 <!-- Load font icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
 <!-- The navigation menu -->
 <div class="navbar">
   <a href="home">Home</a>
   <div class="subnav">
     <button class="subnavbtn">Categories <i class="fa fa-caret-down"></i></button>
-    
-    <div class="subnav-content" *ngFor="let category of categories">
-      <a href="category/{{ category.id }}">{{category.typeName}}</a>
+    <div class="subnav-content" *ngFor="let category of categories"> <!---------------->
+      <a href="category/{{ category.id }}">{{category.typeName}}</a> <!---------------->
     </div>
-
   </div>
+
   <a href="search">Search</a>
   <a href="login">Login</a>
   <a href="basket">Shopping Basket</a>
@@ -28,6 +28,10 @@
       <a href="orderOverview">Order Overview</a>
     </div>
   </div>
+</div>
+
+
+
 
   <!-- <div class="subnav">
     <button class="subnavbtn">Extra <i class="fa fa-caret-down"></i></button>
@@ -36,4 +40,3 @@
       <a href="product">Product</a>
     </div>
   </div> -->
-</div>

@@ -1,9 +1,10 @@
 
 
 
+
 <!-- Create  -->
 <h2> Create new product </h2>
-<form>
+<form>  <!-------------------->
     <label for="nProductName">Product Name:</label>
     <br>
     <input id="nProductName" #nProductName>
@@ -21,24 +22,16 @@
 
     <label for="nProductType">Type:</label>
     <br>
-    <!-- <input type="number" id="nProductType" #nProductType> -->
-    
     <div >
-      <select id="nProductType" #nProductType>
-        <option *ngFor="let category of categories" [value]="category.id">
-          {{category.typeName}}
+      <select id="nProductType" #nProductType> <!-------------------->
+        <option *ngFor="let category of categories" [value]="category.id"> <!-------------------->
+          {{category.typeName}} <!-------------------->
         </option>
       </select>
     </div>
     
     <br>
-
-    <!-- <label for="nProductPictures">Pictures:</label>
-    <br>
-    <input type="text" id="nProductPictures" name="nProductPictures" #nProductPictures>
-    <br> -->
-
-    <button type="button" (click)="
+    <button type="button" (click)="   
       add(
         nProductName.value,
         nProductPrice.value,
@@ -48,11 +41,42 @@
       nProductPrice.value = '';
       nProductDescription.value = '';
       nProductType.value = '';
-     ">Create</button>
+     ">Create</button>  <!-------------------->
     <br>
 </form>
 
+
+<!-- Read  -->
 <hr>
+<h2> Read Table of all products </h2>
+
+<table style="border-style: solid;">  <!-------------------->
+  <tr>
+    <th style="border-style: solid;">Product ID</th>
+    <th style="border-style: solid;">Product Name</th>
+    <th style="border-style: solid;">Price</th> 
+    <th style="border-style: solid;">Description</th> 
+    <th style="border-style: solid;">Types</th> 
+  </tr>
+
+  <tr *ngFor="let product of products">  <!-------------------->
+    <td><a>{{ product.id }}</a></td>  <!-------------------->
+    <td>
+      <a routerLink="/Update-product/{{ product.id }}">{{ product.productName }}</a>  <!-------------------->
+    </td>
+    <td><a>{{ product.price }}</a></td>  <!-------------------->
+    <td><a>{{ product.description }}</a></td>  <!-------------------->
+    <td>
+      <a>{{ product.type.typeName }}</a>  <!-------------------->
+
+<!-- Delete  -->
+      <a (click)="delete(product)">[X]</a>  <!-------------------->
+    </td>
+  </tr>
+</table>
+<hr>
+
+
 
 
 <!-- Read  -->
@@ -65,26 +89,11 @@
 </ul> -->
 
 
-<h2> Read Table of all products </h2>
-<table style="border-style: solid;">
-  <tr>
-    <th style="border-style: solid;">Product ID</th>
-    <th style="border-style: solid;">Product Name</th>
-    <th style="border-style: solid;">Price</th> 
-    <th style="border-style: solid;">Description</th> 
-    <th style="border-style: solid;">Types</th> 
-  </tr>
-  <tr *ngFor="let product of products">
-    <td><a>{{ product.id }}</a></td>
-    <td>
-      <a routerLink="/Update-product/{{ product.id }}">{{ product.productName }}</a>
-    </td>
-    <td><a>{{ product.price }}</a></td>
-    <td><a>{{ product.description }}</a></td>
-    <td>
-      <a>{{ product.type.typeName }}</a>
-      <a (click)="delete(product)">[X]</a>
-    </td>
-  </tr>
-</table>
-<hr>
+
+    <!-- <label for="nProductPictures">Pictures:</label>
+    <br>
+    <input type="text" id="nProductPictures" name="nProductPictures" #nProductPictures>
+    <br> -->
+
+
+      <!-- <input type="number" id="nProductType" #nProductType> -->

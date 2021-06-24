@@ -9,55 +9,58 @@ import { Product } from 'src/app/Components/Domain';
   providedIn: 'root'
 })
 export class ProductService {
-  apiUrl: string = "https://localhost:5001/api/product";
+  apiUrl: string = "https://localhost:5001/api/product";  //---------------
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Product' : 'application/json' })
+  httpOptions = { //---------------
+    headers: new HttpHeaders({ 'Content-Product' : 'application/json' }) //---------------
   };
 
   constructor(
-    private http:HttpClient 
+    private http:HttpClient  //---------------
   ) { }
 
 
 
 
-  getProducts(): Observable<Product[]>{    
-    return this.http.get<Product[]>(this.apiUrl);
+  getProducts(): Observable<Product[]>{     //---------------
+    return this.http.get<Product[]>(this.apiUrl);   //---------------
   }
 
 
-  getProductsByType(id:number): Observable<Product[]>{
-    return this.http.get<Product[]>(`${this.apiUrl}/category/${id}`);
-
+  getProductsByType(id:number): Observable<Product[]>{  //---------------
+    return this.http.get<Product[]>(`${this.apiUrl}/category/${id}`);  //---------------
   }
 
-  getProduct(id:number): Observable<Product>{
-    return this.http.get<Product>(`${this.apiUrl}/${id}`)
-    .pipe(catchError(this.handleError<any>("GetOneProduct"))
+  getProduct(id:number): Observable<Product>{  //---------------
+    return this.http.get<Product>(`${this.apiUrl}/${id}`)   //---------------
+    .pipe(catchError(this.handleError<any>("GetOneProduct"))  //---------------
     );
   }
 
 
-  addProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.apiUrl, product, this.httpOptions)
-    .pipe(catchError(this.handleError<Product>("AddProduct"))
+  addProduct(product: Product): Observable<Product> {  //---------------
+    return this.http.post<Product>(this.apiUrl, product, this.httpOptions)  //---------------
+    .pipe(catchError(this.handleError<Product>("AddProduct"))  //---------------
     );
   }
 
   
-  updateProduct(id:number , product : Product): Observable<Product>{
-    return this.http.put<Product>(`${this.apiUrl}/${id}`, product, this.httpOptions)
-    .pipe(catchError(this.handleError<any>('updateProduct')));
+  updateProduct(id:number , product : Product): Observable<Product>{   //---------------
+    return this.http.put<Product>(`${this.apiUrl}/${id}`, product, this.httpOptions)   //---------------
+    .pipe(catchError(this.handleError<any>('updateProduct')));  //---------------
   }
 
 
-  deleteProduct(id:Number): Observable<Product>{
-    return this.http.delete<Product>(`${this.apiUrl}/${id}`, this.httpOptions)
-    .pipe(catchError(this.handleError<any>('deleteProduct'))
+  deleteProduct(id:Number): Observable<Product>{   //---------------
+    return this.http.delete<Product>(`${this.apiUrl}/${id}`, this.httpOptions)  //---------------
+    .pipe(catchError(this.handleError<any>('deleteProduct'))  //---------------
     );
   }
 
+
+
+
+  
 
   /** USED FOR handleError.
       * Handle Http operation that failed.

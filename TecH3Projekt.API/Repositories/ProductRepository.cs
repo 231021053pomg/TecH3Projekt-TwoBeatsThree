@@ -10,42 +10,43 @@ namespace TecH3Projekt.API.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly TecH3ProjectDbContext _context;  
+        private readonly TecH3ProjectDbContext _context;     //---------------------
 
-        public ProductRepository(TecH3ProjectDbContext context) //constructor som returner vores DbContext 
+        public ProductRepository(TecH3ProjectDbContext context) //constructor som returner vores DbContext     //---------------------
         {
-            _context = context;//connect readonly and instance context.
+            _context = context;//connect readonly and instance context.    //---------------------
         }
 
 
 
 
         //GETALL
-        public async Task<List<Product>> GetAll()//async tasks don't stop other tasks from running.
+        public async Task<List<Product>> GetAll()   //async tasks don't stop other tasks from running.
         {
             //await will return data when completed.
-            return await _context.Product
-               .Where(a => a.DeletedAt == null) //Sort out Deleted Products.
-               //.Include(a => a.Pictures)//1-to-M relations? what about 1-to-1 like type?
-               .Include(a => a.Type) //Includes type
-               .ToListAsync();
+            return await _context.Product    //---------------------
+               .Where(a => a.DeletedAt == null) //Sort out Deleted Products.  //---------------------
+               .Include(a => a.Type) //Includes type   //---------------------
+               .ToListAsync();   //---------------------
         }
 
-        //GETBYID
-        public async Task<Product> GetById(int id)
+
+
+        //GET ÅRPDUCT BY ID
+        public async Task<Product> GetById(int id)  //---------------------
         {
-            return await _context.Product
-               .Where(a => a.DeletedAt == null)
-               .Include(a => a.Pictures)
-               .FirstOrDefaultAsync(a => a.Id == id);
+            return await _context.Product  //---------------------
+               .Where(a => a.DeletedAt == null)  //---------------------
+               .Include(a => a.Pictures)   //---------------------
+               .FirstOrDefaultAsync(a => a.Id == id);  //---------------------
         }
 
 
 
 
 
-        //GETBYTYPE
-        public async Task<List<Product>> GetByType(int id)
+        //GET PRODUCT BY TYPE
+        public async Task<List<Product>> GetByType(int id)  //---------------------
         {
             return await _context.Product
                 .Where(a => a.DeletedAt == null)
@@ -57,9 +58,8 @@ namespace TecH3Projekt.API.Repositories
 
 
 
-
         //CREATE
-        public async Task<Product> Create(Product product)
+        public async Task<Product> Create(Product product)  //---------------------
         {
             product.CreatedAt = DateTime.Now; //setter created at dato
             _context.Product.Add(product);   //tilføjer product
@@ -67,8 +67,10 @@ namespace TecH3Projekt.API.Repositories
             return product;
         }
 
+
+
         //UPDATE
-        public async Task<Product> Update(int id, Product product)
+        public async Task<Product> Update(int id, Product product)   //---------------------
         {
             var editProduct = await _context.Product.FirstOrDefaultAsync(a => a.Id == id); //findes der product med indskrevet id?
             if (editProduct != null) //checker hvis product findes opdateres der UpdatedAt dato for specific id
@@ -83,8 +85,12 @@ namespace TecH3Projekt.API.Repositories
             return editProduct;
         }
 
+
+
+
+
         //DELETE
-        public async Task<Product> Delete(int id)
+        public async Task<Product> Delete(int id)  //---------------------
         {
             var product = await _context.Product.FirstOrDefaultAsync(a => a.Id == id);  //findes der product med indskrevet id?
             if (product != null)  //hvis der productet findes oprettes der DeletedAt dato og gemmes.
@@ -94,6 +100,5 @@ namespace TecH3Projekt.API.Repositories
             }
             return product;
         }
-
     }
 }

@@ -11,6 +11,13 @@ using TecH3Projekt.API.Services;//
 using Xunit;//Fact
 
 namespace TecH3Projekt.Tests.TestControllers
+
+
+    //Der skal laves 2 Controller tests til Product og Type
+
+
+
+
 {
     public class LogInControllerTests
     {

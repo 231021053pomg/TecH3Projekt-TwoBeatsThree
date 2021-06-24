@@ -1,31 +1,22 @@
 
 
-<!-- Create  -->
+<!-- CREATE  -->
 <h2> Create new clothing type </h2>
+
 <form>
-    <label for="ntype">The name of new type:</label>
+    <label for="ntype">The name of new type:</label> <!---------------------->
     <br>
-    <input id="ntype" #ntype >
+    <input id="ntype" #ntype > <!---------------------->
     <br>
     <button (click)="
       add(ntype.value);
       ntype.value = '';
-    " >Create</button>
+    " >Create</button> <!---------------------->
     <br>
 </form>
 <hr>
 
-
-<!-- Read  -->
-<!-- //TEST LIST OF ALL TYPES. -->
-<!-- <ul *ngFor="let category of categories">
-  <li>
-    <a routerLink="/Update-type/{{ category.id }}">{{ category.typeName }}</a>
-    <a (click)="delete(category)">[X]</a>
-  </li>
-</ul> -->
-
-
+<!-- READ  -->
 <h2> Read Table of all clothing Types </h2>
 <table style="border-style: solid;">
   <tr>
@@ -36,8 +27,24 @@
     <td><a>{{ category.id }}</a></td>
     <td>
       <a routerLink="/Update-type/{{ category.id }}">{{ category.typeName }}</a>
+
+<!-- DELETE  -->
       <a (click)="delete(category)">[X]</a>
     </td>
   </tr>
 </table>
 <hr>
+
+
+
+
+
+
+<!-- Read  -->
+<!-- //TEST LIST OF ALL TYPES. -->
+<!-- <ul *ngFor="let category of categories">
+  <li>
+    <a routerLink="/Update-type/{{ category.id }}">{{ category.typeName }}</a>
+    <a (click)="delete(category)">[X]</a>
+  </li>
+</ul> -->

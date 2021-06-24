@@ -11,17 +11,17 @@ namespace TecH3Projekt.API.Repositories
     public class UserRepository : IUserRepository
     {
 
-        private readonly TecH3ProjectDbContext _context;
+        private readonly TecH3ProjectDbContext _context;  
 
-        public UserRepository(TecH3ProjectDbContext context)
+        public UserRepository(TecH3ProjectDbContext context)   
         {
-            _context = context;
+            _context = context;   
         }
 
 
 
         //GETALL
-        public async Task<List<User>> GetAll()
+        public async Task<List<User>> GetAll()  
         {
             return await _context.User
                 .Where(a => a.DeletedAt == null)
@@ -30,7 +30,7 @@ namespace TecH3Projekt.API.Repositories
         }
 
         //GETBYID
-        public async Task<User> GetById(int id)
+        public async Task<User> GetById(int id)   
         {
             return await _context.User
                 .Where(a => a.DeletedAt == null)
@@ -39,7 +39,7 @@ namespace TecH3Projekt.API.Repositories
         }
 
         //CREATE
-        public async Task<User> Create(User user)
+        public async Task<User> Create(User user)   
         {
             user.CreatedAt = DateTime.Now;
             _context.User.Add(user);
@@ -48,7 +48,7 @@ namespace TecH3Projekt.API.Repositories
         }
 
         //UPDATE
-        public async Task<User> Update(int id, User user)
+        public async Task<User> Update(int id, User user)   
         {
             var editUser = await _context.User.FirstOrDefaultAsync(a => a.Id == id);
             if (editUser != null)
@@ -70,7 +70,7 @@ namespace TecH3Projekt.API.Repositories
         }
 
         //DELETE
-        public async Task<User> Delete(int id)
+        public async Task<User> Delete(int id)    
         {
             var user = await _context.User.FirstOrDefaultAsync(a => a.Id == id);
             if (user != null)

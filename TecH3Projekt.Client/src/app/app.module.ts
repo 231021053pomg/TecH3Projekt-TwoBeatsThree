@@ -3,10 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';//
 import {HttpClientModule} from '@angular/common/http';//
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { UsersComponent } from './Components/users/users.component';
 import { NavBarComponent } from './Components/Shared/nav-bar/nav-bar.component';
 import { FooterComponent } from './Components/Shared/footer/footer.component';
@@ -22,9 +20,9 @@ import { CRUDProductComponent } from './Components/Admin/crudproduct/crudproduct
 import { CRUDUsersComponent } from './Components/Admin/crudusers/crudusers.component';
 import { ReadOrdersComponent } from './Components/Admin/read-orders/read-orders.component';
 import { SearchComponent } from './Components/Pages/search/search.component';
-
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -57,4 +55,5 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

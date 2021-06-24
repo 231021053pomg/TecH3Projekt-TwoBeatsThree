@@ -11,6 +11,23 @@ using Xunit;
 
 namespace TecH3Projekt.Tests.TestService
 {
+
+
+    //Der skal laves test til Service for Type og Product
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public class LogInServiceTests
     {
         private readonly LogInService _sut;   // sut - system under test

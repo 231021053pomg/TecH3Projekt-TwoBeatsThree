@@ -47,6 +47,9 @@ namespace TecH3Projekt.API
             });
 
 
+
+
+
             services.AddDbContext<TecH3ProjectDbContext>(//
                 options => options.UseSqlServer(Configuration.GetConnectionString("ProjectConnection"))
                 );
@@ -67,6 +70,11 @@ namespace TecH3Projekt.API
             services.AddScoped<IPictureService, PictureService>();
             services.AddScoped<ITypeService, TypeService>();
             services.AddScoped<IProductService, ProductService>();// <------------
+
+
+
+
+
 
 
             /////////////////

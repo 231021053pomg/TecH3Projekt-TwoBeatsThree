@@ -10,7 +10,7 @@ namespace TecH3Projekt.API.Services
     {
         //Næsten det sammen som Repository interface
 
-        Task<List<Product>> GetAllProducts();
+        Task<List<Product>> GetAllProducts();    //--------------------
         Task<Product> GetProductById(int id);
         Task<Product> Create(Product product);
         Task<Product> Update(int id, Product product);

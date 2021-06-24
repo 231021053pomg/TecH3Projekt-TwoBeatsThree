@@ -5,7 +5,6 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { CRUDProductComponent } from './Components/Admin/crudproduct/crudproduct.component';//
 import { CRUDTypeComponent } from './Components/Admin/crudtype/crudtype.component';//
 import { CRUDUsersComponent } from './Components/Admin/crudusers/crudusers.component';
-
 import { ReadOrdersComponent } from './Components/Admin/read-orders/read-orders.component';
 import { LoginFormComponent } from './Components/login-form/login-form.component';//
 import { CategoryComponent } from './Components/Pages/category/category.component';//
@@ -16,18 +15,18 @@ import { SearchComponent } from './Components/Pages/search/search.component';//
 import { ShoppingBasketComponent } from './Components/Pages/shopping-basket/shopping-basket.component';//
 import { UsersComponent } from './Components/users/users.component';//
 
-const routes: Routes = [
+
+const routes: Routes = [   //---------------
   
-  { path: '', redirectTo: '/home', pathMatch:'full'}, //Start at Home page.
+  { path: '', redirectTo: '/home', pathMatch:'full'}, //Start at Home page.  //---------------
   
-  { path: 'users', component:UsersComponent}, //USE for testing
+  { path: 'users', component:UsersComponent}, //USE for testing   //---------------
 
   //Detail route
   {path: 'Update-type/:id', component:CategoryDetailComponent},
   {path: 'Update-product/:id', component:ProductDetailComponent},
 
   //CATEGORIES TEST ROUTES.
-
   { path: 'category/:id', component:CategoryComponent},
 
 
@@ -50,8 +49,8 @@ const routes: Routes = [
 
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+@NgModule({   //---------------
+  imports: [RouterModule.forRoot(routes)],   //---------------
+  exports: [RouterModule]   //---------------
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { }   //---------------

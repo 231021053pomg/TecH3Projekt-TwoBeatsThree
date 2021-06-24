@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';//
 import { Observable, of } from 'rxjs';//
 import { catchError, tap } from 'rxjs/operators';//
-
 import { LogIn } from 'src/app/Components/Domain';
 import { User } from 'src/app/Components/Domain';
+
 
 
 @Injectable({
@@ -17,9 +17,17 @@ export class OpretKundeService {
     Headers: new HttpHeaders({ 'Content-Opret' : 'application/json'})
   };
 
+
   constructor(
     private http:HttpClient
   ) { }
+
+
+
+
+
+
+
 
   // addLogIn(login: LogIn): Observable<LogIn> {
   //   return this.http.post<LogIn>(this.apiUrl, login, this.httpOptions)

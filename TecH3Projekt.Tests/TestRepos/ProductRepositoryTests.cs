@@ -11,6 +11,18 @@ using Xunit;
 
 namespace TecH3Projekt.Tests.TestRepos
 {
+
+
+    //Blive ferdig mede type tests også
+
+
+
+
+
+
+
+
+
     public class ProductRepositoryTests
     {
         private readonly DbContextOptions<TecH3ProjectDbContext> _options; //vores database type er TecH3ProjectDbContext
