@@ -1,0 +1,16 @@
+https://angular.io/api/core/OnInit#methods
+ngOnInit()
+
+
+
+this.typeid = (this.route.snapshot.paramMap.get('id') || 0) as number;
+
+
+
+getProductsByType(): void{
+    this.productService.getProductsByType(this.typeid)
+    .subscribe(products => this.products = products)
+  }
+
+
+
