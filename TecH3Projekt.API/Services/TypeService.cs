@@ -19,7 +19,7 @@ namespace TecH3Projekt.API.Services
 
 
         // GET ALL TYPES
-        public async Task<List<Domain.Type>> GetAllTypes()
+        public async Task<List<Domain.Type>> GetAllTypes() //----------------
         {
             var types = await _typeRepository.GetAll();
             return types;
@@ -27,7 +27,7 @@ namespace TecH3Projekt.API.Services
 
 
         // GET TYPE BY ID
-        public async Task<Domain.Type> GetTypeById(int id)
+        public async Task<Domain.Type> GetTypeById(int id)   //----------------
         {
             var type = await _typeRepository.GetById(id);
             return type;
@@ -35,7 +35,7 @@ namespace TecH3Projekt.API.Services
 
 
         // CREATE TYPE
-        public async Task<Domain.Type> Create(Domain.Type type)
+        public async Task<Domain.Type> Create(Domain.Type type)   //----------------
         {
             type = await _typeRepository.Create(type);
             return type;
@@ -43,7 +43,7 @@ namespace TecH3Projekt.API.Services
 
 
         // UPDATE TYPE
-        public async Task<Domain.Type> Update(int id, Domain.Type type)
+        public async Task<Domain.Type> Update(int id, Domain.Type type)   //----------------
         {
             await _typeRepository.Update(id, type);
             return type;
@@ -51,7 +51,7 @@ namespace TecH3Projekt.API.Services
 
 
         // DELETE TYPE
-        public async Task<Domain.Type> Delete(int id)
+        public async Task<Domain.Type> Delete(int id)   //----------------
         {
             var type = await _typeRepository.Delete(id);
             return type;

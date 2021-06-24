@@ -21,7 +21,7 @@ namespace TecH3Projekt.API.Services
 
 
         // GET ALL PRODUCT
-        public async Task<List<Product>> GetAllProducts()
+        public async Task<List<Product>> GetAllProducts()    //--------------------
         {
             var products = await _productRepository.GetAll();
             return products;
@@ -29,7 +29,7 @@ namespace TecH3Projekt.API.Services
 
 
         // GET PRODUCT BY ID
-        public async Task<Product> GetProductById(int id)
+        public async Task<Product> GetProductById(int id)     //--------------------
         {
             var product = await _productRepository.GetById(id);
             return product;
@@ -37,7 +37,7 @@ namespace TecH3Projekt.API.Services
 
 
         // CREATE PRODUCT
-        public async Task<Product> Create(Product product)
+        public async Task<Product> Create(Product product)   //--------------------
         {
             product = await _productRepository.Create(product);
             return product;
@@ -45,7 +45,7 @@ namespace TecH3Projekt.API.Services
 
 
         // UPDATE PRODUCT
-        public async Task<Product> Update(int id, Product product)
+        public async Task<Product> Update(int id, Product product)    //--------------------
         {
             await _productRepository.Update(id, product);
             return product;
@@ -53,14 +53,17 @@ namespace TecH3Projekt.API.Services
 
 
         // DELETE PRODUCT
-        public async Task<Product> Delete(int id)
-        {
+        public async Task<Product> Delete(int id)   //--------------------
+        { 
             var product = await _productRepository.Delete(id);
             return product;
         }
 
+
+
+
         //GET PRODUCT BY TYPE
-        public async Task<List<Product>> GetProductByType(int id)
+        public async Task<List<Product>> GetProductByType(int id)    //--------------------
         {
             var products = await _productRepository.GetByType(id);
             return products;

@@ -14,32 +14,41 @@ namespace TecH3Projekt.API.Controllers
     public class TypeController : ControllerBase
     {
         //inject service into controller.
-        private readonly ITypeService _typeService;
+        private readonly ITypeService _typeService;   //---------------------
 
         //ctor gets ILogInService, which allows for use of classes with ILogInService implemented.
-        public TypeController( ITypeService typeService)
+        public TypeController( ITypeService typeService)    //---------------------
         {
-            _typeService = typeService;
+            _typeService = typeService;    //---------------------
         }
+
+
+
+
+
+
+
         //EXAMPLE: https://localhost:5001/api/type
-        [HttpGet]//ALL
-        public async Task<IActionResult> GetAll()
+        [HttpGet] //Get all
+        public async Task<IActionResult> GetAll()   //---------------------
         {
             try
             {
-                var proTypes = await _typeService.GetAllTypes();
+                var proTypes = await _typeService.GetAllTypes();   //---------------------
                 //throw new Exception("Planned fail...");//Used to fail Tests
                 return Ok(proTypes);
             }
             catch(Exception ex)
             {
-                return Problem(ex.Message);
+                return Problem(ex.Message);   //---------------------
             }
         }
 
+
+
         //EXAMPLE: https://localhost:5001/api/type/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
-        [HttpGet("{id}")]//GetById
-        public async Task<IActionResult> GetById([FromRoute] int id)
+        [HttpGet("{id}")] //Get By Id
+        public async Task<IActionResult> GetById([FromRoute] int id)    //---------------------
         {
             try
             {
@@ -56,9 +65,11 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
+
+
         //EXAMPLE: https://localhost:5001/api/type
-        [HttpPost]
-        public async Task<IActionResult> Create(Domain.Type proType)
+        [HttpPost]  //Create
+        public async Task<IActionResult> Create(Domain.Type proType)   //---------------------
         {
             try
             {
@@ -75,9 +86,11 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
+
+
         //EXAMPLE: https://localhost:5001/api/type/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Domain.Type proType)
+        [HttpPut("{id}")]  //Update
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Domain.Type proType)   //---------------------
         {
             try
             {
@@ -94,9 +107,11 @@ namespace TecH3Projekt.API.Controllers
             }
         }
 
+
+
         //EXAMPLE: https://localhost:5001/api/login/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromRoute] int id)
+        [HttpDelete("{id}")]  //Delete
+        public async Task<IActionResult> Delete([FromRoute] int id)   //---------------------
         {
             try
             {

@@ -9,24 +9,21 @@ namespace TecH3Projekt.API.Database
 {
     public class TecH3ProjectDbContext : DbContext //comes from EFCore.
     {
-        public TecH3ProjectDbContext() { }  //empty constructor (ctor)
-        public TecH3ProjectDbContext(DbContextOptions<TecH3ProjectDbContext> options) : base(options) { }//
+
+        public TecH3ProjectDbContext() { }  //empty constructor (ctor)  //---------------------
+        public TecH3ProjectDbContext(DbContextOptions<TecH3ProjectDbContext> options) : base(options) { } //---------------------
 
 
 
         //Tabeler som EFCore skal generer 
-
         public DbSet<LogIn> LogIn { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Product> Product { get; set; } //<-----------
-
         public DbSet<Order> Order { get; set; }
-
         public DbSet<OrderItem> OrderItem { get; set; }
         public DbSet<Picture> Picture { get; set; }
         public DbSet<Product_Property> Product_Property { get; set; }
         public DbSet<Property> Property { get; set; }
         public DbSet<Domain.Type> Type { get; set; }
-
     }
 }

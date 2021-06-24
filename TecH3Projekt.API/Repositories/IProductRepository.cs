@@ -18,10 +18,10 @@ namespace TecH3Projekt.API.Repositories
 
 
         // Get all Product objects
-        Task<List<Product>> GetAll();  //Task - asynchronouse operation that can return a value
+        Task<List<Product>> GetAll();  //Task - asynchronouse operation that can return a value    //---------------------
 
         //Get Product object by id.
-        Task<Product> GetById(int id);
+        Task<Product> GetById(int id);    //---------------------
 
         //Create Product
         Task<Product> Create(Product product);

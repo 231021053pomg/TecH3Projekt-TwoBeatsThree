@@ -28,7 +28,7 @@ namespace TecH3Projekt.API.Controllers
 
         //EXAMPLE: https://localhost:5001/api/product
         [HttpGet]//getALL
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll()    //---------------------------
         {
             try
             {
@@ -44,7 +44,7 @@ namespace TecH3Projekt.API.Controllers
 
         //EXAMPLE: https://localhost:5001/api/product/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
         [HttpGet("{id}")]//GetById
-        public async Task<IActionResult> GetById([FromRoute] int id)
+        public async Task<IActionResult> GetById([FromRoute] int id)    //---------------------------
         {
             try
             {
@@ -63,7 +63,7 @@ namespace TecH3Projekt.API.Controllers
 
         //EXAMPLE: https://localhost:5001/api/product/typeID //Extra Id used to specify object for DELETE, PUT(update), or GetById/ GetByType.
         [HttpGet("Category/{id}")]//GetByType
-        public async Task<IActionResult> GetByType([FromRoute] int id)
+        public async Task<IActionResult> GetByType([FromRoute] int id)    //---------------------------
         {
             try
             {
@@ -79,7 +79,7 @@ namespace TecH3Projekt.API.Controllers
 
         //EXAMPLE: https://localhost:5001/api/product
         [HttpPost] //Create
-        public async Task<IActionResult> Create(Product product)
+        public async Task<IActionResult> Create(Product product)     //---------------------------
         {
             try
             {
@@ -98,7 +98,7 @@ namespace TecH3Projekt.API.Controllers
 
         //EXAMPLE: https://localhost:5001/api/product/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
         [HttpPut("{id}")] //Update
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Product product)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Product product)    //---------------------------
         {
             try
             {
@@ -117,8 +117,8 @@ namespace TecH3Projekt.API.Controllers
 
         //EXAMPLE: https://localhost:5001/api/login/id //Extra Id used to specify object for DELETE, PUT(update), or GetById.
         [HttpDelete("{id}")] //Delete
-        public async Task<IActionResult> Delete([FromRoute] int id)
-        {
+        public async Task<IActionResult> Delete([FromRoute] int id)    //---------------------------
+        { 
             try
             {
                 var deleteProduct = await _productService.Delete(id);

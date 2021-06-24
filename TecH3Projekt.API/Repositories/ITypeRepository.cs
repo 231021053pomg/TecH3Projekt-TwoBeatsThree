@@ -8,7 +8,7 @@ namespace TecH3Projekt.API.Repositories
     public interface ITypeRepository
     {
         // Get all Type objects
-        Task<List<Domain.Type>> GetAll();
+        Task<List<Domain.Type>> GetAll();  //--------------------
 
         //Get Type object by id.
         Task<Domain.Type> GetById(int id);

@@ -9,18 +9,20 @@ namespace TecH3Projekt.API.Domain
 {
     public class Product : BaseModel
     {
-        [ForeignKey("Type.Id")]
-        public int TypeId { get; set; } //ForeignKey to Type
+        [ForeignKey("Type.Id")]   //---------------------
+        public int TypeId { get; set; } //ForeignKey to Type   //---------------------
 
-        public Type Type { get; set; } //Property of type
+        public Type Type { get; set; } //Property of type   //---------------------
 
-        [Required]
-        public string ProductName { get; set; }
+        [Required]   //---------------------
+        public string ProductName { get; set; }   //---------------------
 
-        [Required]
-        public double Price { get; set; }
+        [Required]    //---------------------
+        public double Price { get; set; }   //---------------------
 
-        public string Description { get; set; }
+        public string Description { get; set; }    //---------------------
+
+
 
 
 
