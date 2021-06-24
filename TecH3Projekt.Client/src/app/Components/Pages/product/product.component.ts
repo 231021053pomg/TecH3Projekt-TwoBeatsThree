@@ -36,7 +36,6 @@ export class ProductComponent implements OnInit {
     else{
       this.getProduct();
     }
-
   }
 
 
@@ -45,5 +44,4 @@ export class ProductComponent implements OnInit {
     .subscribe(product => (product != null ? this.product = product : this.location.go('/home')) 
     )
   }
-
 }
