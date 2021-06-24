@@ -11,22 +11,22 @@ import { ProductService } from '../Services/Pages/product.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  id: number = 0;
-  productName = "";
-  price = 0;
-  description = "";
-  type = "";
+  id: number = 0; //----------------------- 
+  productName = ""; //-----------------------
+  price = 0; //-----------------------
+  description = ""; //-----------------------
+  type = ""; //-----------------------
   
-  product: Product = { productName: "", price: 0, description: "", typeID: 0, id: 0 };
-  message: string = "";
+  product: Product = { productName: "", price: 0, description: "", typeID: 0, id: 0 }; //-----------------------
+  message: string = ""; //-----------------------
 
   constructor(
-    private route:ActivatedRoute,
-    private productService:ProductService,
-    private location:Location
+    private route:ActivatedRoute,     //-----------------------
+    private productService:ProductService,     //-----------------------
+    private location:Location   //-----------------------
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  //-----------------------
     this.id = (this.route.snapshot.paramMap.get('id') || 0) as number;
     this.productName = (this.route.snapshot.paramMap.get('ProductName') || '') as string;
     this.price = (this.route.snapshot.paramMap.get('price') || 0) as number;
@@ -35,32 +35,33 @@ export class ProductDetailComponent implements OnInit {
 
 
     //RETURN to CRUD-types if data incorrect.
-    if(this.id == null || this.id == 0){
-      this.location.go('/CRUD-products'); //url of CRUD-products
+    if(this.id == null || this.id == 0){  //-----------------------
+      this.location.go('/CRUD-products'); //url of CRUD-products   //-----------------------
     }
     else{
-      this.getProduct();
+      this.getProduct(); //-----------------------
     }
   }
 
 
+  //GET ALL PRODUCTS
   getProduct(){
-    
-    this.productService.getProduct(this.id).subscribe(
-      product => (product != null ? this.product = product : this.location.go('/CRUD-Products'))
+    this.productService.getProduct(this.id).subscribe( //-----------------------
+      product => (product != null ? this.product = product : this.location.go('/CRUD-Products'))  //-----------------------
       )
   }
 
-  //save
+  
+  //UPDATE
   save():void{
-    this.productService.updateProduct(this.id, this.product)
-    .subscribe(product => {
-      this.product = product
-      this.message ="Product updated"
+    this.productService.updateProduct(this.id, this.product)  //-----------------------
+    .subscribe(product => {  //-----------------------
+      this.product = product  //-----------------------
+      this.message ="Product updated" //-----------------------
 
-      setTimeout(() => {
-        this.message = "";
-      }, 3000);//Message times out.
+      setTimeout(() => { //-----------------------
+        this.message = ""; //-----------------------
+      }, 3000);  //Message times out.
     });
   }
 }

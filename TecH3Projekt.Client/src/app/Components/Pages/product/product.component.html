@@ -1,20 +1,19 @@
-<!--one product card html example
-https://www.w3schools.com/howto/howto_css_product_card.asp -->
+
 
 
 
 <br>
-<div class="card">
-    <h2>PRODUCT PAGE</h2>
-    <!-- <img src="productPicture.jpg" alt="PictureName" style="width:100%"> -->
-    <h1><a>{{ product.productName }}</a></h1>
-    <p class="price"><a>{{ product.price }}</a></p>
-    <p><a>{{ product.description }}</a></p>
-    <a routerLink="/home">Back</a>
+<div class="card"> 
+    <h2>PRODUCT PAGE</h2> 
+    <h1><a>{{ product.productName }}</a></h1> <!-------------------->
+    <p class="price"><a>{{ product.price }}</a></p> <!-------------------->
+    <p><a>{{ product.description }}</a></p> <!-------------------->
+    <a routerLink="/home">Back</a> <!-------------------->
     
+
+
     <p><button>Add to the cart</button></p>
     <p><button>+</button></p>
     <p class="quantity">*quantity*</p>
     <p><button>-</button></p>
-
 </div>

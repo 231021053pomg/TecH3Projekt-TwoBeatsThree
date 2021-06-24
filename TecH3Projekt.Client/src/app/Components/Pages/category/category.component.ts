@@ -12,32 +12,32 @@ import { Location } from '@angular/common';
 })
 export class CategoryComponent implements OnInit {
 
-  typeid: number = 0;
-  products: Product[] = [];
+  typeid: number = 0; //<--------------------
+  products: Product[] = []; //<--------------------
 
   constructor(
-    private route:ActivatedRoute,
-    private location:Location,
-    private productService:ProductService
+    private route:ActivatedRoute,  //<--------------------
+    private location:Location,  //<--------------------
+    private productService:ProductService //<--------------------
   ) { }
 
 
   //invoked only once
-  ngOnInit(): void {
-    this.typeid = (this.route.snapshot.paramMap.get('id') || 0) as number;
-    //this.getProducts();
-    this.getProductsByType();
+  //https://angular.io/api/core/OnInit#methods
+  ngOnInit(): void {  //<--------------------
+    this.typeid = (this.route.snapshot.paramMap.get('id') || 0) as number; //<--------------------
+    this.getProductsByType();  //<--------------------
   }
 
 
-  getProducts(): void {
-    this.productService.getProducts()
-    .subscribe(products => this.products = products);
+  getProducts(): void { //<--------------------
+    this.productService.getProducts()  //<--------------------
+    .subscribe(products => this.products = products); //<--------------------
   }
 
 
-  getProductsByType(): void{
-    this.productService.getProductsByType(this.typeid)
-    .subscribe(products => this.products = products)
+  getProductsByType(): void{//<--------------------
+    this.productService.getProductsByType(this.typeid) //<--------------------
+    .subscribe(products => this.products = products)//<--------------------
   }
 }

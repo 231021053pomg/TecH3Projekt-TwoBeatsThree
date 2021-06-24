@@ -1,28 +1,16 @@
 
 
-<!--
-<h2> Update existing product </h2>
-
-<input [(ngModel)]= "product.productName">
-<button (click)="save()"> Update </button>
-<a routerLink="/CRUD-products">Back</a>
-<p>{{ message }}</p>
--->
 
 
 
+<p>New Product name</p> <!------------------->
+<input [(ngModel)]= "product.productName"> <!------------------->
 
+<p>New Product price</p> <!------------------->
+<input [(ngModel)]= "product.price"> <!------------------->
 
-
-
-<p>New Product name</p>
-<input [(ngModel)]= "product.productName">
-
-<p>New Product price</p>
-<input [(ngModel)]= "product.price">
-
-<p>New Product description</p>
-<input [(ngModel)]= "product.description">
+<p>New Product description</p> <!------------------->
+<input [(ngModel)]= "product.description"> <!------------------->
 
 <!--
 <div >
@@ -35,6 +23,22 @@
 -->
 
 <br>
+<button (click)="save()"> Update </button> <!------------------->
+<a routerLink="/CRUD-products">BACK</a> <!------------------->
+<p>{{ message }}</p> <!------------------->
+
+
+
+
+
+
+
+<!--
+<h2> Update existing product </h2>
+
+<input [(ngModel)]= "product.productName">
 <button (click)="save()"> Update </button>
-<a routerLink="/CRUD-products">BACK</a>
+<a routerLink="/CRUD-products">Back</a>
 <p>{{ message }}</p>
+-->
+

@@ -9,19 +9,19 @@ import { Category } from '../../Domain';
 })
 export class NavBarComponent implements OnInit {
 
-  categories: Category[] = [];
+  categories: Category[] = []; //--------------------
 
   constructor(
-    private categoryService:CategoryService
+    private categoryService:CategoryService //--------------------
   ) { }
 
   ngOnInit(): void {
-    this.getCategories();
+    this.getCategories(); //--------------------
   }
 
-  getCategories(): void {
-    this.categoryService.getCategories()
-    .subscribe(categories => this.categories = categories);
+  getCategories(): void { //--------------------
+    this.categoryService.getCategories() //--------------------
+    .subscribe(categories => this.categories = categories); //--------------------
   }
 
 }

@@ -28,8 +28,5 @@ namespace TecH3Projekt.API.Database
         public DbSet<Property> Property { get; set; }
         public DbSet<Domain.Type> Type { get; set; }
 
-
-       
-
     }
 }
