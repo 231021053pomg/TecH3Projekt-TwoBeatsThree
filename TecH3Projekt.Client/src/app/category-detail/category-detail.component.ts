@@ -47,7 +47,7 @@ export class CategoryDetailComponent implements OnInit {
     this.categoryService.updateCategory(this.id, this.category)
     .subscribe(category => {
       this.category = category
-      this.message ="Category BLANK updated"
+      this.message ="Category updated"
 
       setTimeout(() => {
         this.message = "";

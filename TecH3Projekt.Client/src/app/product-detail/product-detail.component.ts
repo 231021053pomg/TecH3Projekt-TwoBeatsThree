@@ -10,7 +10,8 @@ import { ProductService } from '../Services/Pages/product.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  id:number = 0;
+
+  id: number = 0;
   productName = "";
   price = 0;
   description = "";
@@ -28,12 +29,14 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.id = (this.route.snapshot.paramMap.get('id') || 0) as number;
     this.productName = (this.route.snapshot.paramMap.get('ProductName') || '') as string;
-
+    this.price = (this.route.snapshot.paramMap.get('price') || 0) as number;
+    this.description = (this.route.snapshot.paramMap.get('description') || '') as string;
+    this.type = (this.route.snapshot.paramMap.get('type') || '') as string;
 
 
     //RETURN to CRUD-types if data incorrect.
     if(this.id == null || this.id == 0){
-      this.location.go('/CRUD-products');//url of CRUD-products
+      this.location.go('/CRUD-products'); //url of CRUD-products
     }
     else{
       this.getProduct();
@@ -53,7 +56,7 @@ export class ProductDetailComponent implements OnInit {
     this.productService.updateProduct(this.id, this.product)
     .subscribe(product => {
       this.product = product
-      this.message ="Product BLANK updated"
+      this.message ="Product updated"
 
       setTimeout(() => {
         this.message = "";
